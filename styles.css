@@ -80,6 +80,21 @@ body{
   opacity: .5;
 }
 
+/* 左上角「回首頁」透明熱區 */
+.home-hotspot{
+  position: absolute;
+  z-index: 2;
+
+  /* 這組數值要和 index.html 一樣 */
+  top: 60px;
+  left: 40px;
+  width: 120px;
+  height: 120px;
+
+  background: transparent;
+  text-decoration: none;
+}
+
 /* 手機 */
 @media (max-width: 640px){
   .nav{
