@@ -35,7 +35,7 @@
   --abt-leading: 2;
   --abt-left: 280px;   /* 左右位置 */
   --abt-top: 610px;    /* 上下位置 */
-  --abt-width: 560px;  /* 文字寬度 */
+  --abt-width: 650px;  /* 文字寬度 */
 }
 
 *{ box-sizing: border-box; }
