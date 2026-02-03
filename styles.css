@@ -87,15 +87,15 @@ body{
   z-index: 5;
   cursor: pointer;
 
-  /* 這組數值要和 index.html 一樣 */
   top: 60px;
   left: 40px;
   width: 120px;
   height: 120px;
 
-  background: transparent;
-  text-decoration: none;
+  background: rgba(255,0,0,.25); /* ✅ 暫時打開 */
+  outline: 2px solid rgba(255,0,0,.6); /* ✅ 更好看 */
 }
+
 
 /* 手機 */
 @media (max-width: 640px){
