@@ -116,6 +116,11 @@ body{
   transition: none;
 }
 
+.nav, .nav a{
+  font-family: "COPPERPLATEGOTHIC 29 BC", "Copperplate Gothic", "Copperplate", serif;
+}
+
+
 /* hover：底線 */
 .nav a:hover{
   text-decoration: underline;
