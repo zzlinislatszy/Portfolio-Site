@@ -42,6 +42,7 @@ body{
     rgba(0,0,0,0.08) 65%,
     rgba(0,0,0,0.22) 100%
   );
+  pointer-events: none;
 }
 
 /* Bottom nav */
@@ -83,7 +84,8 @@ body{
 /* 左上角「回首頁」透明熱區 */
 .home-hotspot{
   position: absolute;
-  z-index: 2;
+  z-index: 5;
+  cursor: pointer;
 
   /* 這組數值要和 index.html 一樣 */
   top: 60px;
