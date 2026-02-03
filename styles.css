@@ -31,9 +31,11 @@
   /* About copy spec */
   --abt-color: #4f270d;
   --abt-size: 11px;
-  /* 字距 45：設計軟體 tracking 45 ≈ 45/1000 em */
   --abt-tracking: 0.045em;
   --abt-leading: 2;
+  --abt-left: 280px;   /* 左右位置 */
+  --abt-top: 610px;    /* 上下位置 */
+  --abt-width: 560px;  /* 文字寬度 */
 }
 
 *{ box-sizing: border-box; }
@@ -193,7 +195,8 @@ body{
   line-height: var(--abt-leading);
 
   /* 讓中文排版更穩 */
-  word-break: keep-all;
+  word-break: break-word;
+  overflow-wrap: anywhere;
 
   /* Chrome/macOS 文字不糊 */
   -webkit-font-smoothing: antialiased;
@@ -203,6 +206,17 @@ body{
 /* 如果 About 內文全部是中文，強制用 GenRyu */
 .about-text{
   font-family: "GenRyuMin TW", serif;
+}
+
+/* =========================
+   About layout (位置控制)
+   ========================= */
+.page-about .about-text{
+  position: absolute;
+  left: var(--abt-left);
+  top:  var(--abt-top);
+  width: var(--abt-width);
+  z-index: 2;
 }
 
 /* =========================
