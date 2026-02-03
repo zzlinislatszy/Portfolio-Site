@@ -1,3 +1,6 @@
+/* =========================
+   Fonts
+   ========================= */
 @font-face{
   font-family: "GenRyuMin TW";
   src: url("./fonts/genryu_tw_200.otf") format("opentype");
@@ -14,9 +17,14 @@
   font-display: swap;
 }
 
+/* =========================
+   Global
+   ========================= */
 :root{
   --text: rgba(255,255,255,.92);
-  --shadow: rgba(0,0,0,.45);  
+  --shadow: rgba(0,0,0,.45);
+
+  /* 回首頁熱區（你已成功那組） */
   --home-top: 123px;
   --home-left: 53px;
   --home-size: 150px;
@@ -29,17 +37,26 @@ body{
   margin: 0;
   height: 100%;
   color: var(--text);
-  font-family: "GenRyuMin TW", serif;
   background: #000;
   overflow: hidden;
+
+  /* ✅ 預設中文字體 */
+  font-family: "GenRyuMin TW", serif;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-/* 英文文字：用 Copperplate */
-:lang(en){
+/* ✅ 只在你指定區域使用英文 Copperplate（避免全域亂套） */
+.about-text :lang(en),
+.page :lang(en),
+.nav :lang(en){
   font-family: "COPPERPLATEGOTHIC 29 BC", "Copperplate Gothic", "Copperplate", serif;
 }
 
-/* Full-screen hero background */
+/* =========================
+   Hero backgrounds
+   ========================= */
 .hero{
   position: relative;
   width: 100vw;
@@ -49,13 +66,14 @@ body{
   background-position: center;
   background-repeat: no-repeat;
 }
+
+/* About 專用背景 */
 .hero--about{
   background-image: url("./assets/hero_abtme.jpg");
 }
 
-
-/* Overlay：只讓底部更好讀（很淡） */
-.hero::before{
+/* ✅ 只有「首頁」才加底部淡遮罩（About 不要被蓋色） */
+.hero:not(.hero--about)::before{
   content:"";
   position:absolute;
   inset:0;
@@ -68,14 +86,18 @@ body{
   pointer-events: none;
 }
 
-/* Bottom nav */
+/* =========================
+   Bottom nav
+   ========================= */
 .nav{
   position:absolute;
   left:0; right:0; bottom:0;
   z-index: 2;
+
   display:flex;
   justify-content:center;
   gap: 50px;
+
   padding: 22px 16px 28px;
   text-shadow: 0 6px 18px var(--shadow);
   user-select:none;
@@ -87,35 +109,42 @@ body{
   font-size: 16px;
   letter-spacing: .03em;
   text-shadow: 0 1px 3px rgba(0,0,0,.35);
+
   padding: 6px 10px;
   white-space: nowrap;
-  transition: none; /* 不需要動畫了 */
+
+  transition: none;
 }
 
-.nav a:hover{
-  opacity: 1;
-}
-
-/* 目前頁：只用底線區隔 */
-.nav a.current{
-  text-decoration: underline;
-  text-underline-offset: 6px;     /* 底線離字一點距離 */
-  text-decoration-thickness: 1px; /* 細一點，比較精緻 */
-}
-
+/* hover：底線 */
 .nav a:hover{
   text-decoration: underline;
   text-underline-offset: 6px;
   text-decoration-thickness: 1px;
 }
 
-.nav a.current:hover{
+/* current：底線 */
+.nav a.current{
   text-decoration: underline;
+  text-underline-offset: 6px;
+  text-decoration-thickness: 1px;
 }
 
+/* 手機 */
+@media (max-width: 640px){
+  .nav{
+    gap: 18px;
+    padding-bottom: 18px;
+    flex-wrap: wrap;
+  }
+  .nav a{ font-size: 14px; }
+}
 
+/* =========================
+   Home hotspot (clickable area)
+   ========================= */
 .home-hotspot{
-  position: fixed;     /* ✅ 不是 absolute */
+  position: fixed;
   z-index: 9999;
   cursor: pointer;
 
@@ -129,38 +158,41 @@ body{
   text-decoration: none;
 }
 
-/* About Me 內文：依你的規格鎖死 */
+/* =========================
+   About page text (locked spec)
+   ========================= */
+
+/* ✅ About 頁：控制文字區塊位置（只改這裡就能對齊底圖） */
+.page-about{
+  --abt-top: 560px;     /* 往下＝變大 */
+  --abt-left: 260px;    /* 往右＝變大 */
+  --abt-width: 760px;   /* 控制換行位置 */
+}
+
+/* ✅ 固定定位：不會捲動跑掉 */
+.about-text{
+  position: fixed;
+  z-index: 3;
+  top: var(--abt-top);
+  left: var(--abt-left);
+  width: var(--abt-width);
+}
+
+/* ✅ 你指定的文字規格 */
 .abt-copy{
-  color: #4f270d;     /* 你指定色號 */
+  color: #4f270d;     /* RGB 79,39,13 */
   font-size: 11px;    /* 字級 11 */
+  letter-spacing: 0.045em; /* 字距 45 (tracking 45/1000em) */
+  line-height: 2;     /* 行距 2 */
 
-  /* 字距 45：一般你說的 45 多半是設計軟體的 tracking(1/1000 em) */
-  /* 所以 CSS 用 0.045em 來對齊視覺最接近 */
-  letter-spacing: 0.045em;
-
-  /* 行距 2：CSS 用 line-height: 2 (代表 2 倍字級) */
-  line-height: 2;
-
-  /* 避免文字被 antialiasing 弄得糊一點點（Chrome/macOS 常見） */
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-
-  /* 如果你希望每行不被自動斷字太怪，可加這個 */
+  text-rendering: geometricPrecision;
   word-break: keep-all;
+  margin: 0;
 }
 
-
-/* 手機 */
-@media (max-width: 640px){
-  .nav{
-    gap: 18px;
-    padding-bottom: 18px;
-    flex-wrap: wrap;
-  }
-  .nav a{ font-size: 14px; }
-}
-
-/* 內容頁（如果你想在分頁放文字） */
+/* =========================
+   Generic content block (if you later need)
+   ========================= */
 .page{
   position: relative;
   z-index: 1;
