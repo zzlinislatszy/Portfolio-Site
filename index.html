@@ -78,14 +78,16 @@
       text-shadow: 0 1px 3px rgba(0,0,0,.35);
       padding: 6px 10px;
       border-radius: 12px;
-      transition: all .15s ease;
+      transition: opacity .15s ease;
       white-space: nowrap;
     }
-
-    .nav a:focus,
-    .nav a:active{
-      background: none;
-      color: rgba(255,255,255);
+        
+    .nav a:hover{
+      opacity: 1;
+    }
+    
+    .nav a.current{
+      opacity: .5;          /* 你要的 50% */
     }
 
 
