@@ -1,0 +1,112 @@
+:root{
+  --text: rgba(255,255,255,.92);
+  --shadow: rgba(0,0,0,.45);
+}
+
+*{ box-sizing: border-box; }
+html, body{ height:100%; margin:0; }
+
+body{
+  margin: 0;
+  height: 100%;
+  color: var(--text);
+  background: #000;
+
+  font-family:
+    "COPPERPLATEGOTHIC 29 BC",
+    "Copperplate Gothic",
+    "Copperplate",
+    "Georgia",
+    serif;
+}
+
+/* Full-screen hero background */
+.hero{
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  background-image: url("./assets/hero.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Overlay：只讓底部更好讀（很淡） */
+.hero::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0,0,0,0.00) 0%,
+    rgba(0,0,0,0.08) 65%,
+    rgba(0,0,0,0.22) 100%
+  );
+}
+
+/* Bottom nav */
+.nav{
+  position:absolute;
+  left:0; right:0; bottom:0;
+  z-index: 2;
+  display:flex;
+  justify-content:center;
+  gap: 50px;
+  padding: 22px 16px 28px;
+  text-shadow: 0 6px 18px var(--shadow);
+  user-select:none;
+}
+
+.nav a{
+  color: rgba(255,255,255,.85);
+  text-decoration:none;
+  font-size: 16px;
+  letter-spacing: .03em;
+  text-shadow: 0 1px 3px rgba(0,0,0,.35);
+  padding: 6px 10px;
+  border-radius: 12px;
+  white-space: nowrap;
+
+  transition: opacity .15s ease;  /* 只動透明度，避免糊 */
+  opacity: 1;
+}
+
+.nav a:hover{
+  opacity: 1;
+}
+
+/* 目前頁：只降透明度 50%，不改其他外觀 */
+.nav a.current{
+  opacity: .5;
+}
+
+/* 手機 */
+@media (max-width: 640px){
+  .nav{
+    gap: 18px;
+    padding-bottom: 18px;
+    flex-wrap: wrap;
+  }
+  .nav a{ font-size: 14px; }
+}
+
+/* 內容頁（如果你想在分頁放文字） */
+.page{
+  position: relative;
+  z-index: 1;
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 64px 20px 120px;
+}
+
+.page h1{
+  margin: 0 0 18px;
+  font-size: 28px;
+  letter-spacing: .04em;
+}
+
+.page p{
+  margin: 0;
+  line-height: 1.9;
+  color: rgba(255,255,255,.86);
+}
