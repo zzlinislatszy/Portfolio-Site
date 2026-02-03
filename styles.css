@@ -1,3 +1,19 @@
+@font-face{
+  font-family: "GenRyuMin TW";
+  src: url("./fonts/genryu_tw_200.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face{
+  font-family: "COPPERPLATEGOTHIC 29 BC";
+  src: url("./fonts/copperplate_29_bc.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root{
   --text: rgba(255,255,255,.92);
   --shadow: rgba(0,0,0,.45);  
@@ -13,15 +29,14 @@ body{
   margin: 0;
   height: 100%;
   color: var(--text);
+  font-family: "GenRyuMin TW", serif;
   background: #000;
   overflow: hidden;
+}
 
-  font-family:
-    "COPPERPLATEGOTHIC 29 BC",
-    "Copperplate Gothic",
-    "Copperplate",
-    "Georgia",
-    serif;
+/* 英文文字：用 Copperplate */
+:lang(en){
+  font-family: "COPPERPLATEGOTHIC 29 BC", "Copperplate Gothic", "Copperplate", serif;
 }
 
 /* Full-screen hero background */
