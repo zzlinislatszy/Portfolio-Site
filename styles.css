@@ -1,6 +1,9 @@
 :root{
   --text: rgba(255,255,255,.92);
-  --shadow: rgba(0,0,0,.45);
+  --shadow: rgba(0,0,0,.45);  
+  --home-top: 150px;
+  --home-left: 22px;
+  --home-size: 150px;
 }
 
 *{ box-sizing: border-box; }
@@ -87,10 +90,10 @@ body{
   z-index: 9999;
   cursor: pointer;
 
-  top: 130px;          /* 先用 px，保證不會跑到底下 */
-  left: 45px;
-  width: 140px;
-  height: 140px;
+  top: var(--home-top);
+  left: var(--home-left);
+  width: var(--home-size);
+  height: var(--home-size);
 
   background: rgba(255,0,0,.25); /* 對齊用 */
   outline: 2px solid rgba(255,0,0,.6);
