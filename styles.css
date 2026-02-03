@@ -64,25 +64,29 @@ body{
 
 .nav a{
   color: rgba(255,255,255,.85);
-  text-decoration:none;
+  text-decoration: none;
   font-size: 16px;
   letter-spacing: .03em;
   text-shadow: 0 1px 3px rgba(0,0,0,.35);
   padding: 6px 10px;
-  border-radius: 12px;
   white-space: nowrap;
 
-  transition: opacity .15s ease;  /* 只動透明度，避免糊 */
-  opacity: 1;
+  transition: none; /* 不需要動畫了 */
 }
 
 .nav a:hover{
   opacity: 1;
 }
 
-/* 目前頁：只降透明度 50%，不改其他外觀 */
+/* 目前頁：只用底線區隔 */
 .nav a.current{
-  opacity: .5;
+  text-decoration: underline;
+  text-underline-offset: 6px;     /* 底線離字一點距離 */
+  text-decoration-thickness: 1px; /* 細一點，比較精緻 */
+}
+
+.nav a:hover{
+  text-decoration: none;
 }
 
 .home-hotspot{
