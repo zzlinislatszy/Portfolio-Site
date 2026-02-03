@@ -84,17 +84,21 @@ body{
 /* 左上角「回首頁」透明熱區 */
 .home-hotspot{
   position: absolute;
-  z-index: 5;
+  z-index: 10;
   cursor: pointer;
 
-  top: 60px;
-  left: 40px;
-  width: 120px;
-  height: 120px;
+  /* ✅ 先用百分比：cover 下更穩 */
+  left: 3%;
+  top: 16%;
+  width: 13%;
+  aspect-ratio: 1 / 1;
 
-  background: rgba(255,0,0,.25); /* ✅ 暫時打開 */
-  outline: 2px solid rgba(255,0,0,.6); /* ✅ 更好看 */
+  /* ✅ 先開紅框定位（對齊後再拿掉） */
+  background: rgba(255,0,0,.25);
+  outline: 2px solid rgba(255,0,0,.65);
 }
+
+
 
 
 /* 手機 */
