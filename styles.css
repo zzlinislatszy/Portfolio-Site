@@ -117,16 +117,18 @@ body{
   text-decoration: none;
 
   font-size: 16px;
-  letter-spacing: .03em;
 
-  /* 讓字更清楚 */
-  text-shadow: 0 1px 3px rgba(0,0,0,.35);
+  /* ✅ 鎖死 tracking，不吃字型影響 */
+  letter-spacing: 0.08em;
 
   padding: 6px 10px;
+  margin: 0 25px;  /* ← 50px gap 的一半 */
+
   white-space: nowrap;
 
-  transition: none;
+  text-shadow: 0 1px 3px rgba(0,0,0,.35);
 }
+
 
 /* hover：你後來想要 hover 也有底線，我就保持一致 */
 .nav a:hover{
