@@ -88,9 +88,9 @@ body{
   cursor: pointer;
 
   /* ✅ 精準蓋住左上正方形 */
-  left: 15%;
-  top: 30%;
-  width: 10%;
+  left: 20%;
+  top: 350%;
+  width: 20%;
   aspect-ratio: 1 / 1;
 
   /* ⚠️ 對齊完成後改成 transparent */
