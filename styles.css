@@ -1,8 +1,8 @@
 :root{
   --text: rgba(255,255,255,.92);
   --shadow: rgba(0,0,0,.45);  
-  --home-top: 100px;
-  --home-left: 30px;
+  --home-top: 130px;
+  --home-left: 40px;
   --home-size: 150px;
 }
 
