@@ -88,8 +88,8 @@ body{
   cursor: pointer;
 
   /* ✅ 精準蓋住左上正方形 */
-  left: 3.5%;
-  top: 22%;
+  left: 5%;
+  top: 30%;
   width: 12%;
   aspect-ratio: 1 / 1;
 
