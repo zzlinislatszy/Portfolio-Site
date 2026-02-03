@@ -87,8 +87,8 @@ body{
   z-index: 9999;
   cursor: pointer;
 
-  top: 140px;          /* 先用 px，保證不會跑到底下 */
-  left: 35px;
+  top: 130px;          /* 先用 px，保證不會跑到底下 */
+  left: 45px;
   width: 140px;
   height: 140px;
 
