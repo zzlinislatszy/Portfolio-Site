@@ -95,8 +95,9 @@ body{
   width: var(--home-size);
   height: var(--home-size);
 
-  background: rgba(255,0,0,.25); /* 對齊用 */
-  outline: 2px solid rgba(255,0,0,.6);
+  background: transparent;
+  outline: none;
+  text-decoration: none;
 }
 
 /* 手機 */
