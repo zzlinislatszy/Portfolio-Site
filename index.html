@@ -1,1 +1,131 @@
-hello
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Your Name</title>
+
+  <style>
+    :root{
+      --text: rgba(255,255,255,.92);
+      --muted: rgba(255,255,255,.7);
+      --shadow: rgba(0,0,0,.45);
+    }
+
+    *{ box-sizing: border-box; }
+    html, body{ height:100%; margin:0; }
+    body{
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans TC", sans-serif;
+      color: var(--text);
+      overflow: hidden;
+    }
+
+    /* Full-screen background */
+    .hero{
+      position: relative;
+      width: 100vw;
+      height: 100vh;
+      background-image: url("./assets/hero.jpg");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+    /* Dark overlay for readability */
+    .hero::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      background: linear-gradient(
+        to bottom,
+        rgba(0,0,0,.25) 0%,
+        rgba(0,0,0,.35) 60%,
+        rgba(0,0,0,.55) 100%
+      );
+    }
+
+    /* Center title */
+    .center{
+      position:absolute;
+      inset:0;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+      padding: 24px;
+      z-index: 1;
+      text-shadow: 0 6px 20px var(--shadow);
+    }
+
+    .name{
+      font-size: clamp(18px, 2.2vw, 28px);
+      font-weight: 500;
+      letter-spacing: .04em;
+      margin: 0;
+    }
+
+    /* Bottom nav */
+    .nav{
+      position:absolute;
+      left:0; right:0; bottom:0;
+      z-index: 2;
+      display:flex;
+      justify-content:center;
+      gap: 28px;
+      padding: 22px 16px 26px;
+      color: var(--muted);
+      text-shadow: 0 6px 18px var(--shadow);
+      user-select:none;
+    }
+
+    .nav a{
+      color: var(--muted);
+      text-decoration:none;
+      font-size: 16px;
+      letter-spacing: .02em;
+      padding: 6px 6px;
+      border-radius: 10px;
+      transition: all .15s ease;
+    }
+
+    .nav a:hover{
+      color: var(--text);
+      background: rgba(255,255,255,.08);
+    }
+
+    /* Optional: small top-left brand (if you want) */
+    .brand{
+      position:absolute;
+      top: 18px;
+      left: 22px;
+      z-index: 2;
+      font-size: 14px;
+      color: var(--muted);
+      letter-spacing: .06em;
+      text-shadow: 0 6px 18px var(--shadow);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="hero">
+    <!-- 可選：左上角品牌文字 -->
+    <!-- <div class="brand">Your Studio</div> -->
+
+    <div class="center">
+      <h1 class="name">Your Name</h1>
+    </div>
+
+    <nav class="nav" aria-label="Primary">
+      <!-- 先用頁面連結：之後你可改成真的分頁 -->
+      <a href="./news.html">News</a>
+      <a href="./paintings.html">Paintings</a>
+      <a href="./exhibitions.html">Exhibitions</a>
+      <a href="./publications.html">Publications</a>
+      <a href="./texts.html">Texts</a>
+      <a href="./about.html">About</a>
+      <a href="./contact.html">Contact</a>
+    </nav>
+  </div>
+</body>
+</html>
