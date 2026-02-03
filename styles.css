@@ -81,20 +81,17 @@ body{
   opacity: .5;
 }
 
-/* 左上角「回首頁」透明熱區 */
 .home-hotspot{
-  position: absolute;
-  z-index: 10;
+  position: fixed;     /* ✅ 不是 absolute */
+  z-index: 9999;
   cursor: pointer;
 
-  /* ✅ 精準蓋住左上正方形 */
-  left: 2.6%;
-  top: 10%;
-  width: 10.5%;
-  aspect-ratio: 1 / 1;
+  top: 140px;          /* 先用 px，保證不會跑到底下 */
+  left: 35px;
+  width: 140px;
+  height: 140px;
 
-  /* ⚠️ 對齊完成後改成 transparent */
-  background: rgba(255,0,0,.25);
+  background: rgba(255,0,0,.25); /* 對齊用 */
   outline: 2px solid rgba(255,0,0,.6);
 }
 
