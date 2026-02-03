@@ -89,7 +89,6 @@ body{
   text-shadow: 0 1px 3px rgba(0,0,0,.35);
   padding: 6px 10px;
   white-space: nowrap;
-
   transition: none; /* 不需要動畫了 */
 }
 
@@ -105,8 +104,15 @@ body{
 }
 
 .nav a:hover{
-  text-decoration: none;
+  text-decoration: underline;
+  text-underline-offset: 6px;
+  text-decoration-thickness: 1px;
 }
+
+.nav a.current:hover{
+  text-decoration: underline;
+}
+
 
 .home-hotspot{
   position: fixed;     /* ✅ 不是 absolute */
