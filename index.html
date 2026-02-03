@@ -52,7 +52,22 @@
         rgba(0,0,0,.45) 100%
       );
     }
+    
+    /* 🔹 左上角「回首頁」透明熱區（對齊背景圖裡的正方形） */
+    .home-hotspot{
+      position: absolute;
+      z-index: 2;
 
+      /* 這四個值請依你的畫面微調 */
+      top: 60px;
+      left: 40px;
+      width: 120px;
+      height: 120px;
+
+      background: transparent;
+      text-decoration: none;
+    }
+    
     /* Bottom nav */
     .nav{
       position:absolute;
@@ -78,21 +93,8 @@
       padding: 6px 10px;
       border-radius: 12px;
       white-space: nowrap;
-
-      /* 關鍵：只允許透明度動畫，避免「糊」 */
-      transition: opacity .15s ease;
-      opacity: 1;
     }
 
-    /* Hover：不出底，只讓字更「穩」 */
-    .nav a:hover{
-      opacity: 1;
-    }
-
-    /* 目前頁（已點擊狀態）：外觀完全不變，只降透明度到 50% */
-    .nav a.current{
-      opacity: .5;
-    }
 
     /* 手機版：間距自動縮小，避免擠在一起 */
     @media (max-width: 640px){
