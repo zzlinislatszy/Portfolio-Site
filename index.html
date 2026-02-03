@@ -8,12 +8,12 @@
   <style>
     :root{
       --text: rgba(255,255,255,.92);
-      --muted: rgba(255,255,255,.72);
       --shadow: rgba(0,0,0,.45);
     }
 
     *{ box-sizing: border-box; }
     html, body{ height:100%; margin:0; }
+
     body{
       margin: 0;
       height: 100%;
@@ -21,7 +21,6 @@
       background: #000;
       overflow: hidden;
 
-      /* 你的指定字體（優先）+ fallback */
       font-family:
         "COPPERPLATEGOTHIC 29 BC",
         "Copperplate Gothic",
@@ -35,13 +34,13 @@
       position: relative;
       width: 100vw;
       height: 100vh;
-      background-image: url("./assets/hero.jpg"); /* 確保路徑與檔名完全一致 */
+      background-image: url("./assets/hero.jpg");
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
     }
 
-    /* Overlay：讓底部字更好讀（你若背景本來就很暗，可把透明度調低） */
+    /* Overlay：讓底部字更好讀 */
     .hero::before{
       content:"";
       position:absolute;
@@ -61,10 +60,7 @@
       z-index: 2;
       display:flex;
       justify-content:center;
-
-      /* 你要「分開一些些」：調這個 gap 就好 */
       gap: 50px;
-
       padding: 22px 16px 28px;
       text-shadow: 0 6px 18px var(--shadow);
       user-select:none;
@@ -75,11 +71,27 @@
       text-decoration:none;
       font-size: 16px;
       letter-spacing: .03em;
+
+      /* 讓字更清楚，但不會變成描邊 */
       text-shadow: 0 1px 3px rgba(0,0,0,.35);
+
       padding: 6px 10px;
       border-radius: 12px;
-      transition: opacity .15s ease;
       white-space: nowrap;
+
+      /* 關鍵：只允許透明度動畫，避免「糊」 */
+      transition: opacity .15s ease;
+      opacity: 1;
+    }
+
+    /* Hover：不出底，只讓字更「穩」 */
+    .nav a:hover{
+      opacity: 1;
+    }
+
+    /* 目前頁（已點擊狀態）：外觀完全不變，只降透明度到 50% */
+    .nav a.current{
+      opacity: .5;
     }
 
     /* 手機版：間距自動縮小，避免擠在一起 */
@@ -96,10 +108,7 @@
 
 <body>
   <div class="hero">
-    <!-- 你說文字已在背景圖裡，所以這裡不放任何置中文字 -->
-
     <nav class="nav" aria-label="Primary">
-      <!-- 先用頁面連結：你還沒做分頁也沒關係，先上線再慢慢補 -->
       <a href="./about.html">About Me</a>
       <a href="./education-experience.html">Education &amp; Experience</a>
       <a href="./projects.html">Projects</a>
