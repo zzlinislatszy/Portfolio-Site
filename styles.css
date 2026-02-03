@@ -93,41 +93,40 @@ body{
 .nav{
   position:absolute;
   left:0; right:0; bottom:0;
-  z-index: 3;
+  z-index: 2;
 
   display:flex;
   justify-content:center;
-
-  /* ❌ 不用 gap */
-  /* gap: 50px; */
+  gap: 50px;
 
   padding: 22px 16px 28px;
-
-  /* ✅ 鎖死字型 */
-  font-family: "COPPERPLATEGOTHIC 29 BC",
-               "Copperplate Gothic",
-               "Copperplate",
-               serif;
-
   text-shadow: 0 6px 18px var(--shadow);
+  user-select:none;
+
+  /* ✅ 改成跟首頁一致：不要用自訂 woff2 那個名字 */
+  font-family:
+    "Copperplate Gothic",
+    "Copperplate",
+    "Georgia",
+    serif;
 }
+
 
 .nav a{
   color: rgba(255,255,255,.85);
   text-decoration: none;
 
   font-size: 16px;
-
-  /* ✅ 鎖死 tracking，不吃字型影響 */
-  letter-spacing: 0.08em;
+  letter-spacing: .03em;
+  text-shadow: 0 1px 3px rgba(0,0,0,.35);
 
   padding: 6px 10px;
-  margin: 0 25px;  /* ← 50px gap 的一半 */
-
+  border-radius: 12px; /* ✅ 首頁有 */
   white-space: nowrap;
 
-  text-shadow: 0 1px 3px rgba(0,0,0,.35);
+  transition: none; /* ✅ 首頁沒有 hover 動畫感就鎖死 */
 }
+
 
 
 /* hover：你後來想要 hover 也有底線，我就保持一致 */
