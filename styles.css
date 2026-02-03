@@ -49,6 +49,10 @@ body{
   background-position: center;
   background-repeat: no-repeat;
 }
+.hero--about{
+  background-image: url("./assets/hero_abtme.jpg");
+}
+
 
 /* Overlay：只讓底部更好讀（很淡） */
 .hero::before{
@@ -118,6 +122,27 @@ body{
   outline: none;
   text-decoration: none;
 }
+
+/* About Me 內文：依你的規格鎖死 */
+.abt-copy{
+  color: #4f270d;     /* 你指定色號 */
+  font-size: 11px;    /* 字級 11 */
+
+  /* 字距 45：一般你說的 45 多半是設計軟體的 tracking(1/1000 em) */
+  /* 所以 CSS 用 0.045em 來對齊視覺最接近 */
+  letter-spacing: 0.045em;
+
+  /* 行距 2：CSS 用 line-height: 2 (代表 2 倍字級) */
+  line-height: 2;
+
+  /* 避免文字被 antialiasing 弄得糊一點點（Chrome/macOS 常見） */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  /* 如果你希望每行不被自動斷字太怪，可加這個 */
+  word-break: keep-all;
+}
+
 
 /* 手機 */
 @media (max-width: 640px){
