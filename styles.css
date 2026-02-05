@@ -430,3 +430,88 @@ body{
 .ee-right .ee-list--gap{
   margin-top: 20px;
 }
+
+
+/* =========================
+   Project
+   ========================= */
+
+.hero--projects{
+  background-image: url("./assets/hero_pj.jpg");
+}
+
+.page-projects{
+  --pj-top: 360px;
+  --pj-left: 260px;
+  --pj-width: 1200px;
+
+  --pj-col-gap: 120px;
+
+  --pj-title-size: 13px;
+  --pj-title-track: 0.08em;
+
+  --pj-zh-size: 11px;
+  --pj-zh-track: 0.045em;
+  --pj-zh-leading: 2;
+}
+
+.page-projects .pj{
+  position: absolute;
+  top: var(--pj-top);
+  left: var(--pj-left);
+  width: var(--pj-width);
+  color: var(--ee-color); /* 跟 EE 共用色 */
+}
+
+.pj-grid{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: var(--pj-col-gap);
+}
+
+.pj-title{
+  font-family: "COPPERPLATEGOTHIC 29 BC","Copperplate",serif;
+  font-size: var(--pj-title-size);
+  letter-spacing: var(--pj-title-track);
+  margin: 0 0 16px;
+}
+
+.pj-zh{
+  font-family: "GenRyuMin TW", serif;
+  font-size: var(--pj-zh-size);
+  letter-spacing: var(--pj-zh-track);
+  line-height: var(--pj-zh-leading);
+  margin: 0 0 12px;
+}
+
+.pj-list{
+  list-style: none;
+  padding: 0;
+  margin: 0 0 14px;
+}
+
+.pj-list li{
+  font-family: "GenRyuMin TW", serif;
+  font-size: var(--pj-zh-size);
+  letter-spacing: var(--pj-zh-track);
+  line-height: 1.8;
+}
+
+.pj-result{
+  font-family: "COPPERPLATEGOTHIC 29 BC","Copperplate",serif;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  margin-top: 10px;
+}
+
+.pj-links{
+  margin-top: 32px;
+}
+
+.pj-links img{
+  width: 22px;
+  height: 22px;
+  opacity: .85;
+}
+
+
