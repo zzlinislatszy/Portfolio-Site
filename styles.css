@@ -541,7 +541,7 @@ body{
 
 .page-pj .pj-col:nth-child(1),
 .page-pj .pj-col:nth-child(2){
-  transform: translateX(19px); /* 左、中的內文往右一點點 */
+  transform: translateX(18px); /* 左、中的內文往右一點點 */
 }
 
 .page-pj .pj-col:nth-child(3){
