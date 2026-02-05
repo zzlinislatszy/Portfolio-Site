@@ -454,7 +454,7 @@ body{
   --pj-hd-track: 0.06em;
 
   /* 內文容器定位（你只要對齊目標就改這三個） */
-  --pj-top: 300px;        /* ✅ 先給合理值：你照目標微調 */
+  --pj-top: 200px;        /* ✅ 先給合理值：你照目標微調 */
   --pj-left: 260px;       /* ✅ 跟 About / EE 左緣一致 */
   --pj-width: 1140px;     /* 三欄寬度 */
 
@@ -534,13 +534,9 @@ body{
 }
 
 /* （除錯用）要看熱區位置就解除註解 */
-/*
 .pj-hotspot{
   background: rgba(255,0,0,.18);
   outline: 2px solid rgba(255,0,0,.55);
-}
-*/
-
 }
 
 
