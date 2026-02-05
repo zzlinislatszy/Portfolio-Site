@@ -534,6 +534,20 @@ body{
 }
 
 
+/* =========================
+   PJ: Align body text with title (fine-tune)
+   ========================= */
+
+/* 左兩欄內文：往左一點點，讓第一個字對齊標題 */
+.page-pj .pj-grid .pj-col:nth-child(1),
+.page-pj .pj-grid .pj-col:nth-child(2){
+  transform: translateX(-10px);
+}
+
+/* 右一欄內文：往右一點點，讓第一個字對齊標題 */
+.page-pj .pj-grid .pj-col:nth-child(3){
+  transform: translateX(10px);
+}
 
 
 
