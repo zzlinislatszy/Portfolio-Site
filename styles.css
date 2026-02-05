@@ -459,8 +459,8 @@ body{
   --pj-col-gap: 120px;    /* 三欄間距 */
 
   /* ✅ 欄內微調（依你最後一張紅線標註） */
-  --pj-col-shift-etl: 13px;   /* 左欄內文往右 */
-  --pj-col-shift-bhp: 13px;   /* 中欄內文往右 */
+  --pj-col-shift-etl: 12.2px;   /* 左欄內文往右 */
+  --pj-col-shift-bhp: 12.2px;   /* 中欄內文往右 */
   --pj-col-shift-land: -10px; /* 右欄內文往左 */
 }
 
