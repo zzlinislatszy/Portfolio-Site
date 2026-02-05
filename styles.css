@@ -455,10 +455,10 @@ body{
 
   /* 內文容器定位（你只要對齊目標就改這三個） */
   --pj-top: 200px;        /* ✅ 先給合理值：你照目標微調 */
-  --pj-left: 225px;       /* ✅ 跟 About / EE 左緣一致 */
+  --pj-left: 220px;       /* ✅ 跟 About / EE 左緣一致 */
   --pj-width: 1140px;     /* 三欄寬度 */
 
-  --pj-col-gap: 125px;    /* 三欄間距 */
+  --pj-col-gap: 120px;    /* 三欄間距 */
 }
 
 /* Projects 內文容器：和 EE 一樣用 absolute 鎖位置 */
@@ -494,8 +494,13 @@ body{
   letter-spacing: var(--pj-zh-track);
   line-height: var(--pj-zh-leading);
   margin: 0 0 14px;
+  padding: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.pj-col{
+  padding: 0;
 }
 
 /* 內文段落間「小空一格」 */
@@ -532,26 +537,6 @@ body{
   left: 1393px;
   top: 686px;
 }
-
-
-/* =========================
-   PJ: Align body text with title (fine-tune)
-   ========================= */
-
-/* 左兩欄內文：往左一點點，讓第一個字對齊標題 */
-.page-pj .pj-grid .pj-col:nth-child(1),
-.page-pj .pj-grid .pj-col:nth-child(2){
-  transform: translateX(-10px);
-}
-
-/* 右一欄內文：往右一點點，讓第一個字對齊標題 */
-.page-pj .pj-grid .pj-col:nth-child(3){
-  transform: translateX(10px);
-}
-
-
-
-
 
 
 
