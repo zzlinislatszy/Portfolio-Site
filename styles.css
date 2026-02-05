@@ -545,7 +545,7 @@ body{
 }
 
 .page-pj .pj-col:nth-child(3){
-  transform: translateX(-19px); /* 右欄內文往左一點點 */
+  transform: translateX(-16px); /* 右欄內文往左一點點 */
 }
 
 
