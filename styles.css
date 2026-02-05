@@ -276,7 +276,7 @@ body{
   --ee-exp-col-company: 150px;
   --ee-exp-col-bar: 22px;
   --ee-exp-col-role: 150px;
-  --ee-exp-col-year: 80px;
+  --ee-exp-col-year: var(--ee-ed-year-col);
 
   --ee-exp-row-gap: 14px;
 
@@ -387,11 +387,12 @@ body{
 }
 
 /* 公司（英文 13 / Copperplate） */
-.ee-company{
-  font-family: "COPPERPLATEGOTHIC 29 BC","Copperplate Gothic","Copperplate",serif;
-  font-size: var(--ee-en-size);
-  letter-spacing: var(--ee-en-track);
-  text-transform: uppercase;
+.ee-company,
+.ee-role{
+  font-family: "GenRyuMin TW", serif;
+  font-size: var(--ee-zh-size);      /* 11px */
+  letter-spacing: var(--ee-zh-track);
+  line-height: var(--ee-zh-leading);
   white-space: nowrap;
 }
 
@@ -402,13 +403,6 @@ body{
   white-space: nowrap;
 }
 
-/* 職稱（中文：完全跟 .ee-zh 同規格） */
-.ee-role{
-  font-family: "GenRyuMin TW", serif;
-  font-size: var(--ee-zh-size);
-  letter-spacing: var(--ee-zh-track);
-  line-height: var(--ee-zh-leading);
-}
 
 /* Experience 年份（數字：完全跟 .ee-year 同規格） */
 .ee-exp-row .ee-year{
