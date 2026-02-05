@@ -433,85 +433,114 @@ body{
 
 
 /* =========================
-   Project
+   Projects (PJ)
    ========================= */
 
+/* PJ page hero */
 .hero--pj{
-  background-image: url("./assets/hero_pj.jpg");
+  background-image: url("./assets/hero_pj.jpg"); /* 你說的 hero_pj */
 }
 
+/* PJ layout vars：只調這裡就會對齊目標圖 */
 .page-pj{
-  --pj-top: 360px;
-  --pj-left: 260px;
-  --pj-width: 1200px;
+  --pj-color: var(--abt-color);
 
-  --pj-col-gap: 120px;
+  /* 內文規格：完全跟 About / EE */
+  --pj-zh-size: var(--abt-size);        /* 11px */
+  --pj-zh-track: var(--abt-tracking);   /* 0.045em */
+  --pj-zh-leading: var(--abt-leading);  /* 2 */
 
-  --pj-title-size: 13px;
-  --pj-title-track: 0.08em;
+  --pj-hd-size: 15px;     /* 跟 EE 標題 */
+  --pj-hd-track: 0.06em;
 
-  --pj-zh-size: 11px;
-  --pj-zh-track: 0.045em;
-  --pj-zh-leading: 2;
+  /* 內文容器定位（你只要對齊目標就改這三個） */
+  --pj-top: 300px;        /* ✅ 先給合理值：你照目標微調 */
+  --pj-left: 260px;       /* ✅ 跟 About / EE 左緣一致 */
+  --pj-width: 1140px;     /* 三欄寬度 */
+
+  --pj-col-gap: 120px;    /* 三欄間距 */
 }
 
+/* Projects 內文容器：和 EE 一樣用 absolute 鎖位置 */
 .page-pj .pj{
   position: absolute;
   top: var(--pj-top);
   left: var(--pj-left);
   width: var(--pj-width);
-  color: var(--ee-color); /* 跟 EE 共用色 */
+  z-index: 2;
+  color: var(--pj-color);
 }
 
+/* 三欄 */
 .pj-grid{
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: 1fr 1fr 1fr;
   column-gap: var(--pj-col-gap);
+  align-items: start;
 }
 
-.pj-title{
-  font-family: "COPPERPLATEGOTHIC 29 BC","Copperplate",serif;
-  font-size: var(--pj-title-size);
-  letter-spacing: var(--pj-title-track);
-  margin: 0 0 16px;
+/* 欄位標題（英文 Copperplate） */
+.pj-hd{
+  font-size: var(--pj-hd-size);
+  letter-spacing: var(--pj-hd-track);
+  margin: 0 0 18px;
+  text-transform: uppercase;
 }
 
+/* 中文內文（完全比照 About / EE） */
 .pj-zh{
   font-family: "GenRyuMin TW", serif;
   font-size: var(--pj-zh-size);
   letter-spacing: var(--pj-zh-track);
   line-height: var(--pj-zh-leading);
-  margin: 0 0 12px;
-}
-
-.pj-list{
-  list-style: none;
-  padding: 0;
   margin: 0 0 14px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-.pj-list li{
-  font-family: "GenRyuMin TW", serif;
-  font-size: var(--pj-zh-size);
-  letter-spacing: var(--pj-zh-track);
-  line-height: 1.8;
+/* 內文段落間「小空一格」 */
+.pj-gap{ margin-top: 18px; }
+
+/* 有序/無序列表 */
+.pj-ol, .pj-ul, .pj-bul{
+  margin: 8px 0 0 18px;
+  padding: 0;
+}
+.pj-ol li, .pj-ul li, .pj-bul li{
+  margin: 0 0 8px;
 }
 
-.pj-result{
-  font-family: "COPPERPLATEGOTHIC 29 BC","Copperplate",serif;
-  font-size: 11px;
-  letter-spacing: 0.08em;
-  margin-top: 10px;
+/* ✅ 透明點擊熱區：疊在底圖 logo 上（只點 logo 就會開連結） */
+.pj-hotspot{
+  position: fixed;
+  z-index: 9999;
+  width: 56px;     /* 你可依 logo 實際大小微調 */
+  height: 56px;
+  background: transparent;
 }
 
-.pj-links{
-  margin-top: 32px;
+/* 這三個位置請你照目標圖微調（先給「接近你截圖」的起點） */
+.page-pj .pj-hotspot--etl{
+  left: 585px;
+  top: 725px;
+}
+.page-pj .pj-hotspot--boston{
+  left: 980px;
+  top: 725px;
+}
+.page-pj .pj-hotspot--land{
+  left: 1425px;
+  top: 725px;
 }
 
-.pj-links img{
-  width: 22px;
-  height: 22px;
-  opacity: .85;
+/* （除錯用）要看熱區位置就解除註解 */
+/*
+.pj-hotspot{
+  background: rgba(255,0,0,.18);
+  outline: 2px solid rgba(255,0,0,.55);
+}
+*/
+
 }
 
 
