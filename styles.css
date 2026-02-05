@@ -278,10 +278,12 @@ body{
   --ee-ed-year-col: 88px;
   --ee-ed-gap: 18px
 
-  --ee-exp-col-company: 140px;  /* 左側公司/機構那欄 */
+  --ee-exp-col-company: 150px;  /* 左側公司/機構那欄 */
   --ee-exp-col-bar: 22px;       /* | 那欄 */
-  --ee-exp-col-role: 120px;     /* 職稱那欄 */
-  --ee-exp-col-year: 90px;      /* 年份那欄 */
+  --ee-exp-col-role: 150px;     /* 職稱那欄 */
+  --ee-exp-col-year: 80px;      /* 年份那欄 */
+  
+   --ee-exp-row-gap: 14px;
 }
 
 /* =========================
@@ -353,6 +355,10 @@ body{
 }
 
 /* Experience：英(公司) | 中(職稱) 年份，且 | 要對齊 */
+.ee-exp{
+  margin-top: 24px; /* 你要的「每大項間距=24」 */
+}
+
 .ee-exp-row{
   display: grid;
   grid-template-columns:
@@ -360,9 +366,8 @@ body{
     var(--ee-exp-col-bar)
     var(--ee-exp-col-role)
     var(--ee-exp-col-year);
-  column-gap: 0;
   align-items: baseline;
-  margin: 0 0 10px;
+  margin: 0 0 var(--ee-exp-row-gap);
 }
 
 .ee-exp-row .ee-en,
@@ -370,15 +375,30 @@ body{
   padding-right: 0; /* ✅ 取消你原本用 padding 做間距那套，避免飄 */
 }
 
+/* 公司（英文，字級 13） */
+.ee-exp-row .ee-company{
+  font-size: 13px;
+  letter-spacing: .03em;
+}
+
+/* 中間的 | 固定置中，永遠對齊 */
 .ee-exp-row .ee-bar{
-  text-align: center; /* ✅ | 固定在欄位正中 */
-  padding: 0;
+  text-align: center;
 }
 
+/* 職稱（中文，字級 11） */
+.ee-exp-row .ee-role{
+  font-size: 11px;
+  letter-spacing: 0.045em; /* 依你 About 的 tracking */
+  line-height: 2;
+}
+
+/* 年份（數字，字級 11；開頭對齊） */
 .ee-exp-row .ee-year{
-  text-align: left;   /* ✅ 年份開頭對齊（同上） */
+  font-size: 11px;
+  text-align: left;
+  letter-spacing: 0.045em;
 }
-
 /* Tools 清單：每大項間距 24 */
 .ee-list{
   list-style: none;
