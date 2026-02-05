@@ -529,7 +529,7 @@ body{
 
 /* 這三個位置請你照目標圖微調（先給「接近你截圖」的起點） */
 .page-pj .pj-hotspot--etl{
-  left: 600px;
+  left: 554px;
   top: 686px;
 }
 
@@ -550,7 +550,7 @@ body{
 
 /* 左一欄（ETL）：微調往左 */
 .page-pj .pj-grid > .pj-col:nth-child(1){
-  transform: translateX(30px) !important;
+  transform: translateX(25px) !important;
 }
 
 /* 中間欄（Boston）：微調往左 */
