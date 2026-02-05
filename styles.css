@@ -436,11 +436,11 @@ body{
    Project
    ========================= */
 
-.hero--projects{
+.hero--pj{
   background-image: url("./assets/hero_pj.jpg");
 }
 
-.page-projects{
+.page-pj{
   --pj-top: 360px;
   --pj-left: 260px;
   --pj-width: 1200px;
@@ -455,7 +455,7 @@ body{
   --pj-zh-leading: 2;
 }
 
-.page-projects .pj{
+.page-pj .pj{
   position: absolute;
   top: var(--pj-top);
   left: var(--pj-left);
