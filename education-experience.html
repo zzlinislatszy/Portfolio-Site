@@ -3,74 +3,90 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="stylesheet" href="./styles.css?v=2" />
+  <title>Education &amp; Experience</title>
+  <link rel="stylesheet" href="./styles.css?v=1" />
 </head>
 
 <body class="page-ee">
   <div class="hero hero--ee">
-    <!-- 回首頁熱區：沿用同一顆（位置由 styles.css 的 --home-* 控制） -->
+    <!-- 回首頁熱區：沿用你已成功那組 -->
     <a href="./index.html" class="home-hotspot" aria-label="Back to home"></a>
 
-    <!-- 內文（只疊字，底圖是 hero_ee.jpg） -->
-    <section class="ee-wrap" aria-label="Education and Experience content">
-      <h1 class="ee-title" lang="en">Education &amp; Experience</h1>
-
+    <!-- 內容（只做內文） -->
+    <section class="ee" aria-label="Education and experience content">
       <div class="ee-grid">
-        <!-- 左欄：Education + Experience -->
+        <!-- 左欄 -->
         <div class="ee-left">
-          <h2 class="ee-h2" lang="en">Education</h2>
-          <div class="ee-list">
-            <div class="ee-row">
-              <div class="ee-main">碩士｜成功大學 建築所</div>
+          <div class="ee-block">
+            <div class="ee-hd" lang="en">Education</div>
+
+            <div class="ee-ed-row">
+              <div class="ee-zh">碩士｜成功大學 建築所</div>
               <div class="ee-year" lang="en">2020 - 23</div>
             </div>
-            <div class="ee-row">
-              <div class="ee-main">學士｜東海大學 景觀學系</div>
+            <div class="ee-ed-row">
+              <div class="ee-zh">學士｜東海大學 景觀學系</div>
               <div class="ee-year" lang="en">2015 - 20</div>
             </div>
           </div>
 
-          <h2 class="ee-h2 ee-h2--gap" lang="en">Experience</h2>
-          <div class="ee-list">
-            <div class="ee-row">
-              <div class="ee-main">
-                <span lang="en">stanCode AI Lab</span> ｜ 資料科學研究員
-              </div>
+          <div class="ee-block ee-block--gap">
+            <div class="ee-hd" lang="en">Experience</div>
+
+            <div class="ee-exp-row">
+              <div class="ee-en" lang="en">STANCODE AI LAB</div>
+              <div class="ee-bar" aria-hidden="true">|</div>
+              <div class="ee-zh">資料科學研究員</div>
               <div class="ee-year" lang="en">2025</div>
             </div>
-            <div class="ee-row">
-              <div class="ee-main">澄碳綠建築設計顧問 ｜ 專案顧問</div>
+
+            <div class="ee-exp-row">
+              <div class="ee-zh">澄緻綠建築設計顧問</div>
+              <div class="ee-bar" aria-hidden="true">|</div>
+              <div class="ee-zh">專案顧問</div>
               <div class="ee-year" lang="en">2024 - 25</div>
             </div>
-            <div class="ee-row">
-              <div class="ee-main">台灣設計研究院 ｜ 專案經理</div>
+
+            <div class="ee-exp-row">
+              <div class="ee-zh">台灣設計研究院</div>
+              <div class="ee-bar" aria-hidden="true">|</div>
+              <div class="ee-zh">專案經理</div>
               <div class="ee-year" lang="en">2023 - 24</div>
             </div>
           </div>
         </div>
 
-        <!-- 右欄：Tools（依你的目標圖：兩段） -->
+        <!-- 右欄 -->
         <div class="ee-right">
-          <h2 class="ee-h2" lang="en">Technical Tools</h2>
-          <ul class="ee-tools">
-            <li lang="en">Python</li>
-            <li lang="en">Pandas</li>
-            <li lang="en">NumPy</li>
-            <li lang="en">QGIS</li>
-          </ul>
+          <div class="ee-block">
+            <div class="ee-hd" lang="en">Technical Tools</div>
 
-          <h2 class="ee-h2 ee-h2--gap" lang="en">LLM-based assistants</h2>
-          <ul class="ee-tools">
-            <li lang="en">AutoCAD</li>
-            <li lang="en">Adobe InDesign</li>
-            <li lang="en">Adobe Photoshop</li>
-            <li lang="en">Adobe Illustrator</li>
-          </ul>
+            <ul class="ee-list">
+              <li class="ee-item"><span lang="en">Python</span></li>
+              <li class="ee-item"><span lang="en">Pandas</span></li>
+              <li class="ee-item"><span lang="en">Numpy</span></li>
+            </ul>
+
+            <ul class="ee-list ee-list--gap">
+              <li class="ee-item"><span lang="en">QGIS</span></li>
+            </ul>
+
+            <ul class="ee-list ee-list--gap">
+              <li class="ee-item"><span lang="en">LLM-based assistants</span></li>
+            </ul>
+
+            <ul class="ee-list ee-list--gap">
+              <li class="ee-item"><span lang="en">AutoCAD</span></li>
+              <li class="ee-item"><span lang="en">Adobe InDesign</span></li>
+              <li class="ee-item"><span lang="en">Adobe Photoshop</span></li>
+              <li class="ee-item"><span lang="en">Adobe Illustrator</span></li>
+            </ul>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- 底部導覽：沿用同一套 nav（只換 current） -->
+    <!-- 底部導覽（沿用 about 的邏輯） -->
     <nav class="nav" aria-label="Primary">
       <a href="./about.html">About Me</a>
       <a href="./education-experience.html" class="current">Education &amp; Experience</a>
