@@ -541,11 +541,11 @@ body{
 
 .page-pj .pj-col:nth-child(1),
 .page-pj .pj-col:nth-child(2){
-  transform: translateX(16px); /* 左、中的內文往右一點點 */
+  transform: translateX(25px); /* 左、中的內文往右一點點 */
 }
 
 .page-pj .pj-col:nth-child(3){
-  transform: translateX(-13px); /* 右欄內文往左一點點 */
+  transform: translateX(-19px); /* 右欄內文往左一點點 */
 }
 
 
