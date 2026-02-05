@@ -533,11 +533,6 @@ body{
   top: 686px;
 }
 
-/* /* （除錯用）要看熱區位置就解除註解 */
-.pj-hotspot{
-  background: rgba(255,0,0,.18);
-  outline: 2px solid rgba(255,0,0,.55);
-} */
 
 /* === PJ: 只微調三欄內文水平位置，讓第一個字對齊底圖標題 === */
 .page-pj .pj-col{
