@@ -455,7 +455,7 @@ body{
 
   /* 內文容器定位（你只要對齊目標就改這三個） */
   --pj-top: 200px;        /* ✅ 先給合理值：你照目標微調 */
-  --pj-left: 260px;       /* ✅ 跟 About / EE 左緣一致 */
+  --pj-left: 220px;       /* ✅ 跟 About / EE 左緣一致 */
   --pj-width: 1140px;     /* 三欄寬度 */
 
   --pj-col-gap: 120px;    /* 三欄間距 */
@@ -514,23 +514,23 @@ body{
 .pj-hotspot{
   position: fixed;
   z-index: 9999;
-  width: 56px;     /* 你可依 logo 實際大小微調 */
-  height: 56px;
+  width: 30px;     /* 你可依 logo 實際大小微調 */
+  height: 30px;
   background: transparent;
 }
 
 /* 這三個位置請你照目標圖微調（先給「接近你截圖」的起點） */
 .page-pj .pj-hotspot--etl{
-  left: 585px;
-  top: 725px;
+  left: 555px;
+  top: 625px;
 }
 .page-pj .pj-hotspot--boston{
-  left: 980px;
-  top: 725px;
+  left: 950px;
+  top: 625px;
 }
 .page-pj .pj-hotspot--land{
-  left: 1425px;
-  top: 725px;
+  left: 1395px;
+  top: 625px;
 }
 
 /* （除錯用）要看熱區位置就解除註解 */
