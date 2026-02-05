@@ -13,12 +13,130 @@
   <div class="hero hero--pj">
     <a href="./index.html" class="home-hotspot" aria-label="Back to home"></a>
 
-    <!-- ✅ 一定要 class="pj" -->
     <section class="pj" aria-label="Projects content">
       <div class="pj-grid">
-        <!-- 你的三欄內容放這裡 -->
+    
+        <!-- Project 1 -->
+        <article class="pj-item">
+          <h3 class="pj-title" lang="en">Medical Examination Data ETL System</h3>
+    
+          <p class="pj-meta">類型：資料工程</p>
+    
+          <p class="pj-text">
+            目標：建構一套資料處理流程，將健檢資料庫中 JSON 資料建立階層式輸出，
+            並於指定階段串接大型語言模型，將冗雜的醫學說明以精準的方式轉譯，
+            最終輸出為易讀的體檢報告。
+          </p>
+    
+          <div class="pj-block">
+            <p class="pj-label">方法：</p>
+            <ol class="pj-list">
+              <li>自資料庫擷取資料</li>
+              <li>資料前處理</li>
+              <li>階層式輸出</li>
+              <li>指定階層連接大型語言模型</li>
+              <li>輸出體檢報告</li>
+              <li>護理師人工驗證</li>
+            </ol>
+          </div>
+    
+          <p class="pj-text">
+            技術：<span lang="en">Python, pandas, FastAPI, LLM API</span>
+          </p>
+    
+          <p class="pj-text">
+            成果：與原始報告相比，診斷 100% 無遺漏；模型處理 99.9% 無幻覺狀況。
+          </p>
+    
+          <a
+            class="pj-link"
+            href="https://github.com/zzlinislatszy/Medical-Examination-Data-ETL-System"
+            target="_blank"
+            aria-label="Medical Examination Data ETL System GitHub"
+          >
+            <img src="./assets/icon_github.svg" alt="GitHub">
+          </a>
+        </article>
+    
+        <!-- Project 2 -->
+        <article class="pj-item">
+          <h3 class="pj-title" lang="en">Boston Housing Price Prediction</h3>
+    
+          <p class="pj-meta">類型：機器學習（回歸）</p>
+    
+          <p class="pj-text">
+            目標：<span lang="en">Kaggle</span> 競賽，旨在建構高準確度的預測模型，
+            以社會經濟與環境特徵為基礎，精確預測住宅中位房價。
+          </p>
+    
+          <div class="pj-block">
+            <p class="pj-label">方法：</p>
+            <ol class="pj-list">
+              <li>讀取資料集，移除非特徵欄位，切分資料集</li>
+              <li>
+                建立多模型：
+                <ul>
+                  <li lang="en">PolynomialFeatures + StandardScaler + L1 / L2</li>
+                  <li lang="en">StandardScaler + SVR</li>
+                  <li lang="en">RandomForest</li>
+                  <li lang="en">XGBoost</li>
+                </ul>
+              </li>
+              <li>以 <span lang="en">VotingRegressor</span> 加權集成訓練</li>
+              <li>使用 <span lang="en">RMSE</span> 作為訓練與驗證評估指標</li>
+            </ol>
+          </div>
+    
+          <p class="pj-text">
+            技術：<span lang="en">Python, scikit-learn, XGBoost</span>，
+            機器學習模型管線設計與集成方法
+          </p>
+    
+          <p class="pj-text">
+            成果：🥇 <span lang="en">1st Place, Best Score (RMSE): 2.94700</span>
+          </p>
+    
+          <a
+            class="pj-link"
+            href="https://github.com/zzlinislatszy/Boston-Housing-Price-Prediction"
+            target="_blank"
+            aria-label="Boston Housing Price Prediction GitHub"
+          >
+            <img src="./assets/icon_github.svg" alt="GitHub">
+          </a>
+        </article>
+    
+        <!-- Project 3 -->
+        <article class="pj-item">
+          <h3 class="pj-title" lang="en">Landscape &amp; Architecture</h3>
+    
+          <ul class="pj-bullet">
+            <li>碩士論文：<br>複寫自然：當代自然式植栽設計與美學思考</li>
+            <li>
+              碩士競圖：<br>
+              <span lang="en">Art temporary installation in “Panamá la Vieja”</span><br>
+              <span lang="en">– METAMORPHOSE IN MULTIVERSE</span>
+            </li>
+            <li>
+              大學畢業設計：<br>
+              米倉製造：場所有機精神修復與轉譯<br>
+              花蓮市美崙河廊道建置計畫
+            </li>
+          </ul>
+    
+          <a
+            class="pj-link"
+            href="https://drive.google.com/file/d/1CMyYPhNeoFStYpQo26wQwtt8sQxEVfO7/view?usp=sharing"
+            target="_blank"
+            aria-label="Landscape & Architecture Portfolio"
+          >
+            <img src="./assets/icon_drive.svg" alt="Google Drive">
+          </a>
+        </article>
+    
       </div>
     </section>
+
 
     <nav class="nav" aria-label="Primary">
       <a href="./about.html">About Me</a>
