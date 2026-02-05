@@ -533,11 +533,26 @@ body{
   top: 686px;
 }
 
-/* （除錯用）要看熱區位置就解除註解 */
+/* /* （除錯用）要看熱區位置就解除註解 */
 .pj-hotspot{
   background: rgba(255,0,0,.18);
   outline: 2px solid rgba(255,0,0,.55);
+} */
+
+/* === PJ: 只微調三欄內文水平位置，讓第一個字對齊底圖標題 === */
+.page-pj .pj-col{
+  position: relative; /* 保險：確保 transform 不影響外層排版邏輯 */
 }
+
+.page-pj .pj-col:nth-child(1),
+.page-pj .pj-col:nth-child(2){
+  transform: translateX(19px); /* 左、中的內文往右一點點 */
+}
+
+.page-pj .pj-col:nth-child(3){
+  transform: translateX(-19px); /* 右欄內文往左一點點 */
+}
+
 
 
 
