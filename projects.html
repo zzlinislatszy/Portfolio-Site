@@ -1,29 +1,96 @@
-<!doctype html>
-<html lang="zh-Hant">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Projects</title>
-  <link rel="stylesheet" href="./styles.css" />
-</head>
+<body class="page-projects">
+  <div class="hero hero--projects">
+    <a href="./index.html" class="home-hotspot"></a>
 
-<body>
-  <div class="hero">
+    <section class="pj">
+      <div class="pj-grid">
 
-    <!-- 🔹 左上角背景圖正方形：回到首頁 -->
-    <a href="./index.html" class="home-hotspot" aria-label="Back to home"></a>
+        <!-- Project 1 -->
+        <article class="pj-card">
+          <h3 class="pj-title" lang="en">
+            Medical Examination Data ETL System
+          </h3>
 
-    <div class="page">
-      <h1>Projects</h1>
-    </div>
+          <p class="pj-zh">
+            類型：資料工程
+          </p>
 
-    <nav class="nav" aria-label="Primary">
-      <a href="./about.html">About Me</a>
-      <a href="./education-experience.html">Education &amp; Experience</a>
-      <a href="./projects.html" class="current">Projects</a>
-      <a href="./contact.html">Contact</a>
-    </nav>
+          <p class="pj-zh">
+            目標：建構一套資料處理流程，將半結構化 JSON
+            醫療資料轉換為可分析、可驗證的結構化輸出。
+          </p>
 
+          <ul class="pj-list">
+            <li>資料清理與前處理</li>
+            <li>階層式文字輸出</li>
+            <li>LLM 輔助摘要</li>
+          </ul>
+
+          <p class="pj-zh">
+            技術：Python, Pandas, FastAPI, LLM API
+          </p>
+
+          <p class="pj-result">
+            成果：診斷錯誤率 <strong>0%</strong>
+          </p>
+
+          <div class="pj-links">
+            <a href="#" aria-label="GitHub">
+              <img src="./assets/github.svg" alt="">
+            </a>
+          </div>
+        </article>
+
+        <!-- Project 2 -->
+        <article class="pj-card">
+          <h3 class="pj-title" lang="en">
+            Boston Housing Price Prediction
+          </h3>
+
+          <p class="pj-zh">
+            類型：機器學習（回歸）
+          </p>
+
+          <ul class="pj-list">
+            <li>Polynomial + SVR</li>
+            <li>Random Forest</li>
+            <li>XGBoost</li>
+            <li>Voting Regressor</li>
+          </ul>
+
+          <p class="pj-zh">
+            技術：Python, scikit-learn, XGBoost
+          </p>
+
+          <p class="pj-result">
+            🥇 1st Place · RMSE 2.947
+          </p>
+
+          <div class="pj-links">
+            <a href="#"><img src="./assets/github.svg"></a>
+          </div>
+        </article>
+
+        <!-- Project 3 -->
+        <article class="pj-card">
+          <h3 class="pj-title" lang="en">
+            Landscape & Architecture
+          </h3>
+
+          <ul class="pj-list">
+            <li>碩士論文</li>
+            <li>藝術裝置設計</li>
+            <li>畢業設計</li>
+          </ul>
+
+          <div class="pj-links">
+            <a href="#"><img src="./assets/drive.svg"></a>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- nav 照舊 -->
   </div>
 </body>
-</html>
