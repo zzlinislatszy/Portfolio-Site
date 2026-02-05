@@ -455,7 +455,7 @@ body{
 
   /* 內文容器定位（你只要對齊目標就改這三個） */
   --pj-top: 200px;        /* ✅ 先給合理值：你照目標微調 */
-  --pj-left: 220px;       /* ✅ 跟 About / EE 左緣一致 */
+  --pj-left: 230px;       /* ✅ 跟 About / EE 左緣一致 */
   --pj-width: 1140px;     /* 三欄寬度 */
 
   --pj-col-gap: 120px;    /* 三欄間距 */
@@ -521,8 +521,8 @@ body{
 
 /* 這三個位置請你照目標圖微調（先給「接近你截圖」的起點） */
 .page-pj .pj-hotspot--etl{
-  left: 555px;
-  top: 625px;
+  left: 530px;
+  top: 650px;
 }
 .page-pj .pj-hotspot--boston{
   left: 950px;
