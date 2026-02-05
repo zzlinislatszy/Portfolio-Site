@@ -504,13 +504,16 @@ body{
 }
 
 /* 內文段落間「小空一格」 */
-.pj-gap{ margin-top: 18px; }
+.pj-gap{ 
+  margin-top: 18px; 
+}
 
 /* 有序/無序列表 */
 .pj-ol, .pj-ul, .pj-bul{
   margin: 8px 0 0 18px;
   padding: 0;
 }
+
 .pj-ol li, .pj-ul li, .pj-bul li{
   margin: 0 0 8px;
 }
@@ -529,17 +532,32 @@ body{
   left: 554px;
   top: 686px;
 }
+
 .page-pj .pj-hotspot--boston{
   left: 969px;
   top: 686px;
 }
+
 .page-pj .pj-hotspot--land{
   left: 1393px;
   top: 686px;
 }
 
+/* =========================
+   PJ: Align body text with title (fine-tune)
+   ========================= */
 
+/* 左一欄（ETL）：微調往左 */
+.page-pj .pj-grid .pj-col:nth-child(1){
+  transform: translateX(-3px);
+}
 
+/* 中間欄（Boston）：微調往左 */
+.page-pj .pj-grid .pj-col:nth-child(2){
+  transform: translateX(-3px);
+}
 
-
-
+/* 右一欄（Landscape）：微調往左 */
+.page-pj .pj-grid .pj-col:nth-child(3){
+  transform: translateX(-3px);
+}
