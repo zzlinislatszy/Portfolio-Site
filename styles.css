@@ -240,7 +240,7 @@ body{
   background-image: url("./assets/hero_ee.jpg");
 }
 
-/* EE layout vars：先用這組，之後只需要調這裡就能對齊你的目標圖 */
+/* EE vars：集中在 page-ee，之後只調這裡 */
 .page-ee{
   --ee-color: #4f270d;
 
@@ -257,31 +257,36 @@ body{
   --ee-num-size: 11px;
   --ee-num-track: 0.12em;
 
+  /* 內容區整體定位 */
   --ee-top: 360px;
   --ee-left: 260px;
   --ee-width: 900px;
 
+  /* 左右欄距 */
   --ee-col-gap: 190px;
+
+  /* 大區塊間距（右欄 tools 的 gap 也吃這個，右欄我們另給覆蓋） */
   --ee-block-gap: 30px;
 
+  /* Education：中文與年份欄 */
   --ee-ed-year-col: 88px;
   --ee-ed-gap: 18px;
 
+  /* Experience：四欄寬度（公司 | 職稱 年份） */
   --ee-exp-col-company: 150px;
   --ee-exp-col-bar: 22px;
   --ee-exp-col-role: 150px;
   --ee-exp-col-year: 80px;
 
   --ee-exp-row-gap: 14px;
-  --ee-right-shift: -28px; /* 右欄往左：負值 */
-  --ee-edexp-gap: 56px; /* Education 到 Experience 的距離：你要下移就加大 */
 
-
+  /* 你要的兩個微調 */
+  --ee-right-shift: -28px; /* 右欄往左 */
+  --ee-edexp-gap: 56px;    /* Education → Experience 的距離 */
 }
 
-
 /* =========================
-   Education & Experience layout
+   EE layout
    ========================= */
 .page-ee .ee{
   position: absolute;
@@ -291,15 +296,8 @@ body{
   z-index: 2;
   color: var(--ee-color);
 }
-.ee-left .ee-block--gap{
-  margin-top: var(--ee-edexp-gap);
-}
 
 /* 兩欄：左 Education/Experience；右 Technical Tools */
-.ee-right{
-  transform: translateX(var(--ee-right-shift));
-}
-
 .ee-grid{
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -307,11 +305,14 @@ body{
   align-items: start;
 }
 
-/* 區塊間距（大項距 24） */
-.ee-block--gap{
-  margin-top: var(--ee-block-gap);
+/* 右欄左移 */
+.ee-right{
+  transform: translateX(var(--ee-right-shift));
 }
-/* 標題：字級 15 */
+
+/* =========================
+   Blocks / Headings
+   ========================= */
 .ee-hd{
   font-size: var(--ee-title-size);
   letter-spacing: var(--ee-title-track);
@@ -319,6 +320,20 @@ body{
   text-transform: uppercase;
 }
 
+/* ✅ 只讓「左欄 Experience 那個 block」吃 edexp-gap
+   （避免被下面通用 .ee-block--gap 蓋掉） */
+.ee-left .ee-block--gap{
+  margin-top: var(--ee-edexp-gap);
+}
+
+/* ✅ 通用 gap：給其他地方用（如果右欄也有 block--gap 才會吃到） */
+.ee-block--gap{
+  margin-top: var(--ee-block-gap);
+}
+
+/* =========================
+   Type styles
+   ========================= */
 /* 中文內文：11 / tracking 45 / leading 2 */
 .ee-zh{
   font-family: "GenRyuMin TW", serif;
@@ -335,7 +350,7 @@ body{
   line-height: 1.8;
 }
 
-/* 年份（數字內文 11） */
+/* 年份（數字 11） */
 .ee-year{
   font-family: "COPPERPLATEGOTHIC 29 BC","Copperplate Gothic","Copperplate",serif;
   font-size: var(--ee-num-size);
@@ -343,7 +358,9 @@ body{
   white-space: nowrap;
 }
 
-/* Education：中文 + 年份同一列 */
+/* =========================
+   Education rows
+   ========================= */
 .ee-ed-row{
   display: grid;
   grid-template-columns: 1fr var(--ee-ed-year-col);
@@ -352,15 +369,12 @@ body{
   margin: 0 0 8px;
 }
 .ee-ed-row .ee-year{
-  text-align: left;  /* ✅ 讓數字都從同一條線開始 */
+  text-align: left;
 }
 
-/* Experience：英(公司) | 中(職稱) 年份，且 | 要對齊 */
-.ee-exp{
-  margin-top: 24px; /* 你要的「每大項間距=24」 */
-}
-
-/* Experience：公司 | 職稱 年份（固定四欄） */
+/* =========================
+   Experience rows (重點修這裡)
+   ========================= */
 .ee-exp-row{
   display: grid;
   grid-template-columns:
@@ -381,13 +395,14 @@ body{
   white-space: nowrap;
 }
 
-/* 中間的 | 永遠置中且對齊 */
-.ee-exp-row .ee-bar{
+/* 中間的 | 固定置中對齊 */
+.ee-bar{
   text-align: center;
+  opacity: .9;
   white-space: nowrap;
 }
 
-/* 職稱（中文 11 / GenRyu / tracking 45 / leading 2） */
+/* 職稱（中文：完全跟 .ee-zh 同規格） */
 .ee-role{
   font-family: "GenRyuMin TW", serif;
   font-size: var(--ee-zh-size);
@@ -395,50 +410,29 @@ body{
   line-height: var(--ee-zh-leading);
 }
 
-.ee-exp-row{
-  display: grid;
-  grid-template-columns:
-    var(--ee-exp-col-company)
-    var(--ee-exp-col-bar)
-    var(--ee-exp-col-role)
-    var(--ee-exp-col-year);
-  align-items: baseline;
-  margin: 0 0 var(--ee-exp-row-gap);
-}
-
-/* 年份（數字 11） */
+/* Experience 年份（數字：完全跟 .ee-year 同規格） */
 .ee-exp-row .ee-year{
-  font-family: "COPPERPLATEGOTHIC 29 BC","Copperplate Gothic","Copperplate",serif;
-  font-size: var(--ee-num-size);
-  letter-spacing: var(--ee-num-track);
   text-align: left;
-  white-space: nowrap;
 }
 
-/* Tools 清單：每大項間距 24 */
+/* =========================
+   Tools lists
+   ========================= */
 .ee-list{
   list-style: none;
   padding: 0;
   margin: 0;
-}
-.ee-list--gap{
-  margin-top: var(--ee-block-gap);
 }
 
 .ee-item{
   font-family: "COPPERPLATEGOTHIC 29 BC","Copperplate Gothic","Copperplate",serif;
   font-size: var(--ee-en-size);
   letter-spacing: var(--ee-en-track);
-  line-height: 1.75; /* 讓每行穩定好看 */
+  line-height: 1.75;
   margin: 0 0 6px;
 }
 
-/* Tools 區塊：間距稍微小一點 */
+/* Tools 大項間距：比左欄稍小（你現在的需求） */
 .ee-right .ee-list--gap{
   margin-top: 20px;
-}
-
-.ee-bar{
-  text-align: center;
-  opacity: .9;
 }
