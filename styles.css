@@ -262,7 +262,7 @@ body{
   --ee-width: 900px;
 
   --ee-col-gap: 190px;
-  --ee-block-gap: 24px;
+  --ee-block-gap: 30px;
 
   --ee-ed-year-col: 88px;
   --ee-ed-gap: 18px;
@@ -410,3 +410,9 @@ body{
   line-height: 1.75; /* 讓每行穩定好看 */
   margin: 0 0 6px;
 }
+
+/* Tools 區塊：間距稍微小一點 */
+.ee-right .ee-list--gap{
+  margin-top: 20px;
+}
+
