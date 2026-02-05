@@ -251,98 +251,130 @@ body{
   --ee-block-width: 900px;
   --ee-col-gap: 140px;
 
-  /* Text */
-  --ee-body-size: 11px;        /* 你目前 About 內文是 11 */
-  --ee-body-leading: 1.5;        /* 行距 2 */
-  --ee-body-track: 0.045em;    /* 字距 45 -> 0.045em */
-  --ee-h2-size: 11px;
-  --ee-h2-track: 0.08em;
+  --ee-title-size: 15px;       /* 標題字級 15 */
+  --ee-title-track: 0.06em;
+
+  --ee-zh-size: 11px;          /* 中文內文 11 */
+  --ee-zh-track: 0.045em;
+  --ee-zh-leading: 2;
+
+  --ee-en-size: 13px;          /* 英文內文 13（Experience / Tools） */
+  --ee-en-track: 0.08em;
+
+  --ee-num-size: 11px;         /* 數字內文 11（年份） */
+  --ee-num-track: 0.12em;
+
+  --ee-top: 360px;             /* 內容區整體上緣：你可微調 */
+  --ee-left: 260px;            /* 內容區整體左緣：你可微調 */
+  --ee-width: 900px;           /* 內容區寬度：你可微調 */
+
+  --ee-col-gap: 190px;         /* 左右欄距：依你的圖 */
+  --ee-block-gap: 24px;        /* 大項間距 = 24 */
+
+  --ee-ed-year-gap: 40px;      /* Education 年份和中文的距離 */
+  --ee-exp-gap1: 18px;         /* 英文（公司）到 | 的距離 */
+  --ee-exp-gap2: 18px;         /* | 到中文職稱的距離 */
+  --ee-exp-year-gap: 34px;     /* 職稱到年份距離 */
 }
 
-/* 整包 EE 內容的位置 */
-.page-ee .ee-wrap{
+/* =========================
+   Education & Experience layout
+   ========================= */
+.page-ee .ee{
   position: absolute;
-  left: var(--ee-block-left);
-  top: var(--ee-title-top);
-  width: var(--ee-block-width);
+  top: var(--ee-top);
+  left: var(--ee-left);
+  width: var(--ee-width);
   z-index: 2;
-}
-
-/* Title：英文用 Copperplate（靠 lang=en already），色號固定 */
-.ee-title{
-  margin: 0;
   color: var(--ee-color);
-  font-size: var(--ee-title-size);
-  letter-spacing: var(--ee-title-track);
-  line-height: 1.2;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 
-/* Grid：左/右兩欄 */
+/* 兩欄：左 Education/Experience；右 Technical Tools */
 .ee-grid{
-  margin-top: calc(var(--ee-block-top) - var(--ee-title-top));
   display: grid;
   grid-template-columns: 1fr 1fr;
   column-gap: var(--ee-col-gap);
   align-items: start;
 }
 
-/* Section heading（Education / Experience / Technical Tools...） */
-.ee-h2{
-  margin: 0 0 18px;
-  color: var(--ee-color);
-  font-size: var(--ee-h2-size);
-  letter-spacing: var(--ee-h2-track);
-  line-height: 1.2;
-  text-transform: none;
-  -webkit-font-smoothing: antialiased;
-}
-.ee-h2--gap{
-  margin-top: 44px;
+/* 區塊間距（大項距 24） */
+.ee-block--gap{
+  margin-top: calc(var(--ee-block-gap) * 2); /* Education 到 Experience：視覺通常要更開一點 */
 }
 
-/* Rows（左欄：學歷/經歷） */
-.ee-list{
-  display: grid;
-  row-gap: 14px;
+/* 標題：字級 15 */
+.ee-hd{
+  font-size: var(--ee-title-size);
+  letter-spacing: var(--ee-title-track);
+  margin: 0 0 14px;
+  text-transform: uppercase;
 }
 
-.ee-row{
-  display: grid;
-  grid-template-columns: 1fr auto;
-  column-gap: 22px;
-  align-items: baseline;
-
-  color: var(--ee-color);
-  font-size: var(--ee-body-size);
-  letter-spacing: var(--ee-body-track);
-  line-height: var(--ee-body-leading);
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+/* 中文內文：11 / tracking 45 / leading 2 */
+.ee-zh{
+  font-family: "GenRyuMin TW", serif;
+  font-size: var(--ee-zh-size);
+  letter-spacing: var(--ee-zh-track);
+  line-height: var(--ee-zh-leading);
 }
 
-.ee-main{
-  white-space: nowrap;
+/* 英文內文：13 */
+.ee-en{
+  font-family: "COPPERPLATEGOTHIC 29 BC","Copperplate Gothic","Copperplate",serif;
+  font-size: var(--ee-en-size);
+  letter-spacing: var(--ee-en-track);
+  line-height: 1.8;
 }
 
+/* 年份（數字內文 11） */
 .ee-year{
+  font-family: "COPPERPLATEGOTHIC 29 BC","Copperplate Gothic","Copperplate",serif;
+  font-size: var(--ee-num-size);
+  letter-spacing: var(--ee-num-track);
   white-space: nowrap;
 }
 
-/* 右欄工具清單 */
-.ee-tools{
+/* Education：中文 + 年份同一列 */
+.ee-ed-row{
+  display: grid;
+  grid-template-columns: auto auto;
+  column-gap: var(--ee-ed-year-gap);
+  align-items: baseline;
+  margin: 0 0 8px;
+}
+
+/* Experience：英(公司) | 中(職稱) 年份，且 | 要對齊 */
+.ee-exp-row{
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  column-gap: 0;
+  align-items: baseline;
+  margin: 0 0 10px;
+}
+
+.ee-exp-row .ee-en{ padding-right: var(--ee-exp-gap1); }
+.ee-exp-row .ee-bar{
+  font-family: "COPPERPLATEGOTHIC 29 BC","Copperplate Gothic","Copperplate",serif;
+  font-size: var(--ee-zh-size);
+  letter-spacing: 0;
+  padding-right: var(--ee-exp-gap2);
+}
+.ee-exp-row .ee-zh{ padding-right: var(--ee-exp-year-gap); }
+
+/* Tools 清單：每大項間距 24 */
+.ee-list{
   list-style: none;
   padding: 0;
   margin: 0;
+}
+.ee-list--gap{
+  margin-top: var(--ee-block-gap);
+}
 
-  display: grid;
-  row-gap: 14px;
-
-  color: var(--ee-color);
-  font-size: var(--ee-body-size);
-  letter-spacing: var(--ee-body-track);
-  line-height: var(--ee-body-leading);
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+.ee-item{
+  font-family: "COPPERPLATEGOTHIC 29 BC","Copperplate Gothic","Copperplate",serif;
+  font-size: var(--ee-en-size);
+  letter-spacing: var(--ee-en-track);
+  line-height: 1.95; /* 讓每行穩定好看 */
+  margin: 0 0 6px;
 }
