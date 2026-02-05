@@ -529,17 +529,17 @@ body{
 
 /* 這三個位置請你照目標圖微調（先給「接近你截圖」的起點） */
 .page-pj .pj-hotspot--etl{
-  left: 554px;
+  left: 600px;
   top: 686px;
 }
 
 .page-pj .pj-hotspot--boston{
-  left: 969px;
+  left: 980px;
   top: 686px;
 }
 
 .page-pj .pj-hotspot--land{
-  left: 1393px;
+  left: 1400px;
   top: 686px;
 }
 
