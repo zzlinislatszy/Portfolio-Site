@@ -245,12 +245,6 @@ body{
   /* EE color / type */
   --ee-color: #4f270d;
 
-  /* Title */
-  --ee-title-left: 260px;
-  --ee-title-top: 150px;
-  --ee-title-size: 22px;
-  --ee-title-track: 0.06em;
-
   /* Grid block */
   --ee-block-left: 260px;
   --ee-block-top: 360px;
@@ -259,7 +253,7 @@ body{
 
   /* Text */
   --ee-body-size: 11px;        /* 你目前 About 內文是 11 */
-  --ee-body-leading: 2;        /* 行距 2 */
+  --ee-body-leading: 1.5;        /* 行距 2 */
   --ee-body-track: 0.045em;    /* 字距 45 -> 0.045em */
   --ee-h2-size: 11px;
   --ee-h2-track: 0.08em;
@@ -351,20 +345,4 @@ body{
   line-height: var(--ee-body-leading);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
-
-/* 手機：如果你之後要支援再開，目前先完全依你的 desktop 視覺 */
-@media (max-width: 640px){
-  .page-ee .ee-wrap{
-    left: 18px;
-    width: calc(100vw - 36px);
-  }
-  .ee-grid{
-    grid-template-columns: 1fr;
-    row-gap: 32px;
-    margin-top: 36px;
-  }
-  .ee-main{
-    white-space: normal;
-  }
 }
