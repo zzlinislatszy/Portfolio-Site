@@ -231,3 +231,140 @@ body{
 }
 
 
+/* =========================
+   Education & Experience (EE)
+   ========================= */
+
+/* EE page hero */
+.hero--ee{
+  background-image: url("./assets/hero_ee.jpg");
+}
+
+/* EE layout vars：先用這組，之後只需要調這裡就能對齊你的目標圖 */
+:root{
+  /* EE color / type */
+  --ee-color: #4f270d;
+
+  /* Title */
+  --ee-title-left: 260px;
+  --ee-title-top: 150px;
+  --ee-title-size: 22px;
+  --ee-title-track: 0.06em;
+
+  /* Grid block */
+  --ee-block-left: 260px;
+  --ee-block-top: 360px;
+  --ee-block-width: 900px;
+  --ee-col-gap: 140px;
+
+  /* Text */
+  --ee-body-size: 11px;        /* 你目前 About 內文是 11 */
+  --ee-body-leading: 2;        /* 行距 2 */
+  --ee-body-track: 0.045em;    /* 字距 45 -> 0.045em */
+  --ee-h2-size: 11px;
+  --ee-h2-track: 0.08em;
+}
+
+/* 整包 EE 內容的位置 */
+.page-ee .ee-wrap{
+  position: absolute;
+  left: var(--ee-block-left);
+  top: var(--ee-title-top);
+  width: var(--ee-block-width);
+  z-index: 2;
+}
+
+/* Title：英文用 Copperplate（靠 lang=en already），色號固定 */
+.ee-title{
+  margin: 0;
+  color: var(--ee-color);
+  font-size: var(--ee-title-size);
+  letter-spacing: var(--ee-title-track);
+  line-height: 1.2;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Grid：左/右兩欄 */
+.ee-grid{
+  margin-top: calc(var(--ee-block-top) - var(--ee-title-top));
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: var(--ee-col-gap);
+  align-items: start;
+}
+
+/* Section heading（Education / Experience / Technical Tools...） */
+.ee-h2{
+  margin: 0 0 18px;
+  color: var(--ee-color);
+  font-size: var(--ee-h2-size);
+  letter-spacing: var(--ee-h2-track);
+  line-height: 1.2;
+  text-transform: none;
+  -webkit-font-smoothing: antialiased;
+}
+.ee-h2--gap{
+  margin-top: 44px;
+}
+
+/* Rows（左欄：學歷/經歷） */
+.ee-list{
+  display: grid;
+  row-gap: 14px;
+}
+
+.ee-row{
+  display: grid;
+  grid-template-columns: 1fr auto;
+  column-gap: 22px;
+  align-items: baseline;
+
+  color: var(--ee-color);
+  font-size: var(--ee-body-size);
+  letter-spacing: var(--ee-body-track);
+  line-height: var(--ee-body-leading);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.ee-main{
+  white-space: nowrap;
+}
+
+.ee-year{
+  white-space: nowrap;
+}
+
+/* 右欄工具清單 */
+.ee-tools{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  display: grid;
+  row-gap: 14px;
+
+  color: var(--ee-color);
+  font-size: var(--ee-body-size);
+  letter-spacing: var(--ee-body-track);
+  line-height: var(--ee-body-leading);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* 手機：如果你之後要支援再開，目前先完全依你的 desktop 視覺 */
+@media (max-width: 640px){
+  .page-ee .ee-wrap{
+    left: 18px;
+    width: calc(100vw - 36px);
+  }
+  .ee-grid{
+    grid-template-columns: 1fr;
+    row-gap: 32px;
+    margin-top: 36px;
+  }
+  .ee-main{
+    white-space: normal;
+  }
+}
