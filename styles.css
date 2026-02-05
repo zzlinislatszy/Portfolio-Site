@@ -514,15 +514,15 @@ body{
 .pj-hotspot{
   position: fixed;
   z-index: 9999;
-  width: 30px;     /* 你可依 logo 實際大小微調 */
-  height: 30px;
+  width: 26px;     /* 你可依 logo 實際大小微調 */
+  height: 26px;
   background: transparent;
 }
 
 /* 這三個位置請你照目標圖微調（先給「接近你截圖」的起點） */
 .page-pj .pj-hotspot--etl{
   left: 550px;
-  top: 680px;
+  top: 690px;
 }
 .page-pj .pj-hotspot--boston{
   left: 950px;
