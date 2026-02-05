@@ -549,15 +549,15 @@ body{
 
 /* 左一欄（ETL）：微調往左 */
 .page-pj .pj-grid .pj-col:nth-child(1){
-  transform: translateX(-1px);
+  transform: translateX(3px);
 }
 
 /* 中間欄（Boston）：微調往左 */
 .page-pj .pj-grid .pj-col:nth-child(2){
-  transform: translateX(-1px);
+  transform: translateX(3px);
 }
 
 /* 右一欄（Landscape）：微調往左 */
 .page-pj .pj-grid .pj-col:nth-child(3){
-  transform: translateX(-1px);
+  transform: translateX(1px);
 }
