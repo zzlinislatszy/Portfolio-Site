@@ -431,16 +431,17 @@ body{
   margin-top: 20px;
 }
 
+
 /* =========================
    Projects (PJ)
    ========================= */
 
 /* PJ page hero */
 .hero--pj{
-  background-image: url("./assets/hero_pj.jpg");
+  background-image: url("./assets/hero_pj.jpg"); /* 你說的 hero_pj */
 }
 
-/* PJ layout vars：只調這裡 */
+/* PJ layout vars：只調這裡就會對齊目標圖 */
 .page-pj{
   --pj-color: var(--abt-color);
 
@@ -452,19 +453,15 @@ body{
   --pj-hd-size: 15px;     /* 跟 EE 標題 */
   --pj-hd-track: 0.06em;
 
-  /* 內容容器定位：沿用你現在成功出現的那版再微調即可 */
-  --pj-top: 200px;        /* ✅ 若你標題已正確，可不動；要整體上下就調這裡 */
-  --pj-left: 260px;       /* ✅ 跟 About / EE 左緣一致 */
+  /* 內文容器定位（你只要對齊目標就改這三個） */
+  --pj-top: 200px;        /* ✅ 先給合理值：你照目標微調 */
+  --pj-left: 240px;       /* ✅ 跟 About / EE 左緣一致 */
   --pj-width: 1140px;     /* 三欄寬度 */
-  --pj-col-gap: 120px;    /* 三欄間距 */
 
-  /* ✅ 欄內微調（依你最後一張紅線標註） */
-  --pj-col-shift-etl: 12.2px;   /* 左欄內文往右 */
-  --pj-col-shift-bhp: 12.2px;   /* 中欄內文往右 */
-  --pj-col-shift-land: -10px; /* 右欄內文往左 */
+  --pj-col-gap: 120px;    /* 三欄間距 */
 }
 
-/* 內文容器：absolute 鎖位置（和 EE 一樣） */
+/* Projects 內文容器：和 EE 一樣用 absolute 鎖位置 */
 .page-pj .pj{
   position: absolute;
   top: var(--pj-top);
@@ -482,12 +479,7 @@ body{
   align-items: start;
 }
 
-/* ✅ 每欄內文對齊自己的標題左緣（欄內微調） */
-.pj-col--etl  { padding-left: var(--pj-col-shift-etl); }
-.pj-col--bhp  { padding-left: var(--pj-col-shift-bhp); }
-.pj-col--land { padding-left: var(--pj-col-shift-land); }
-
-/* 欄位標題（英文 Copperplate）：用 lang=en 觸發 Copperplate */
+/* 欄位標題（英文 Copperplate） */
 .pj-hd{
   font-size: var(--pj-hd-size);
   letter-spacing: var(--pj-hd-track);
@@ -506,10 +498,10 @@ body{
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* 段落間距 */
+/* 內文段落間「小空一格」 */
 .pj-gap{ margin-top: 18px; }
 
-/* 列表 */
+/* 有序/無序列表 */
 .pj-ol, .pj-ul, .pj-bul{
   margin: 8px 0 0 18px;
   padding: 0;
@@ -517,6 +509,45 @@ body{
 .pj-ol li, .pj-ul li, .pj-bul li{
   margin: 0 0 8px;
 }
+
+/* ✅ 透明點擊熱區：疊在底圖 logo 上（只點 logo 就會開連結） */
+.pj-hotspot{
+  position: fixed;
+  z-index: 9999;
+  width: 26px;     /* 你可依 logo 實際大小微調 */
+  height: 26px;
+  background: transparent;
+}
+
+/* 這三個位置請你照目標圖微調（先給「接近你截圖」的起點） */
+.page-pj .pj-hotspot--etl{
+  left: 554px;
+  top: 686px;
+}
+.page-pj .pj-hotspot--boston{
+  left: 969px;
+  top: 686px;
+}
+.page-pj .pj-hotspot--land{
+  left: 1393px;
+  top: 686px;
+}
+
+/* （除錯用）要看熱區位置就解除註解 */
+.pj-hotspot{
+  background: rgba(255,0,0,.18);
+  outline: 2px solid rgba(255,0,0,.55);
+}
+
+
+
+
+
+
+
+
+
+
 
 
 
