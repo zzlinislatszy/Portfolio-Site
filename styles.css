@@ -455,10 +455,10 @@ body{
 
   /* 內文容器定位（你只要對齊目標就改這三個） */
   --pj-top: 200px;        /* ✅ 先給合理值：你照目標微調 */
-  --pj-left: 220px;       /* ✅ 跟 About / EE 左緣一致 */
+  --pj-left: 225px;       /* ✅ 跟 About / EE 左緣一致 */
   --pj-width: 1140px;     /* 三欄寬度 */
 
-  --pj-col-gap: 130px;    /* 三欄間距 */
+  --pj-col-gap: 125px;    /* 三欄間距 */
 }
 
 /* Projects 內文容器：和 EE 一樣用 absolute 鎖位置 */
