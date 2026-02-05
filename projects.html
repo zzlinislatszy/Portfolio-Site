@@ -4,139 +4,22 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Projects</title>
-  <link rel="stylesheet" href="./styles.css" />
+
+  <!-- ✅ 這行請跟你的實際檔名一致：styles.css 或 style.css -->
+  <link rel="stylesheet" href="./styles.css?v=2" />
 </head>
 
 <body class="page-pj">
   <div class="hero hero--pj">
-    <!-- 回首頁熱區：沿用你已成功那組 -->
     <a href="./index.html" class="home-hotspot" aria-label="Back to home"></a>
 
-    <!-- 內容（只做內文） -->
+    <!-- ✅ 一定要 class="pj" -->
     <section class="pj" aria-label="Projects content">
       <div class="pj-grid">
-
-        <!-- Col 1 -->
-        <article class="pj-card">
-          <h2 class="pj-title" lang="en">MEDICAL EXAMINATION DATA ETL SYSTEM</h2>
-
-          <p class="pj-line">類型：資料工程</p>
-
-          <p class="pj-line">
-            目標：建構一套資料處理流程，將健檢資料庫中 <span lang="en">JSON</span> 資料建立階層式輸出，並於指定階層串接大型語言模型，將冗雜的醫學說明以精準的方式轉譯，最後輸出需別的體檢報告。
-          </p>
-
-          <p class="pj-line">方法：</p>
-          <ol class="pj-ol">
-            <li>自資料庫擷取資料</li>
-            <li>資料前處理</li>
-            <li>階層式輸出</li>
-            <li>指定階層連接大型語言模型</li>
-            <li>輸出體檢報告</li>
-            <li>護理師人工驗證</li>
-          </ol>
-
-          <p class="pj-line">技術：<span lang="en">Python</span>, <span lang="en">pandas</span>, <span lang="en">FastAPI</span>, <span lang="en">LLM API</span></p>
-
-          <p class="pj-line">
-            成果：與原總結報告相比，診斷 100% 無遺漏；模型處理 99.9% 無幻覺狀況。
-          </p>
-
-          <p class="pj-foot">詳參下方連結</p>
-
-          <!-- icon：你把 href 換成你的 repo -->
-          <a class="pj-icon pj-icon--gh" href="#" aria-label="GitHub link">
-            <!-- GitHub mark (inline SVG) -->
-            <svg viewBox="0 0 24 24" width="28" height="28" aria-hidden="true">
-              <path fill="currentColor" d="M12 .5C5.73.5.75 5.63.75 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.26.79-.56v-2.03c-3.2.7-3.87-1.39-3.87-1.39-.52-1.36-1.27-1.72-1.27-1.72-1.04-.74.08-.73.08-.73 1.15.08 1.75 1.2 1.75 1.2 1.02 1.79 2.68 1.27 3.33.97.1-.76.4-1.27.72-1.56-2.55-.3-5.23-1.31-5.23-5.83 0-1.29.45-2.35 1.2-3.18-.12-.3-.52-1.52.12-3.16 0 0 .98-.32 3.2 1.21.93-.26 1.92-.39 2.9-.39.98 0 1.98.13 2.9.39 2.22-1.53 3.2-1.21 3.2-1.21.64 1.64.24 2.86.12 3.16.75.83 1.2 1.89 1.2 3.18 0 4.53-2.69 5.53-5.25 5.82.42.37.78 1.1.78 2.22v3.3c0 .31.21.68.8.56C19.96 21.39 23.25 17.08 23.25 12 23.25 5.63 18.27.5 12 .5Z"/>
-            </svg>
-          </a>
-        </article>
-
-        <!-- Col 2 -->
-        <article class="pj-card">
-          <h2 class="pj-title" lang="en">BOSTON HOUSING PRICE PREDICTION</h2>
-
-          <p class="pj-line">類型：機器學習（回歸）</p>
-
-          <p class="pj-line">
-            目標：<span lang="en">Kaggle</span> 競賽，旨在建構高準確度的預測模型，以社會經濟與環境特徵為基礎，精確預測住宅中位房價。
-          </p>
-
-          <p class="pj-line">方法：</p>
-          <ol class="pj-ol">
-            <li>讀取資料集，移除非特徵欄位，切分資料集</li>
-            <li>
-              建立多模型：
-              <ul class="pj-sub">
-                <li><span lang="en">PolynomialFeatures + StandardScaler + L1 / L2</span></li>
-                <li><span lang="en">StandardScaler + SVR</span></li>
-                <li><span lang="en">RandomForest</span></li>
-                <li><span lang="en">XGBoost</span></li>
-              </ul>
-            </li>
-            <li>以 <span lang="en">VotingRegressor</span> 加權集成訓練</li>
-            <li>使用 <span lang="en">RMSE</span> 作為訓練與驗證評估指標</li>
-          </ol>
-
-          <p class="pj-line">
-            技術：<span lang="en">Python</span>, <span lang="en">scikit-learn</span>, <span lang="en">XGBoost</span>, 機器學習模型管線設計與集成方法
-          </p>
-
-          <p class="pj-line">
-            成果：🥇 <span lang="en">1st Place, Best Score (RMSE)</span>: <span lang="en">2.94700</span>
-          </p>
-
-          <p class="pj-foot">詳參下方連結</p>
-
-          <!-- icon：你把 href 換成你的 repo -->
-          <a class="pj-icon pj-icon--gh" href="#" aria-label="GitHub link">
-            <svg viewBox="0 0 24 24" width="28" height="28" aria-hidden="true">
-              <path fill="currentColor" d="M12 .5C5.73.5.75 5.63.75 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.26.79-.56v-2.03c-3.2.7-3.87-1.39-3.87-1.39-.52-1.36-1.27-1.72-1.27-1.72-1.04-.74.08-.73.08-.73 1.15.08 1.75 1.2 1.75 1.2 1.02 1.79 2.68 1.27 3.33.97.1-.76.4-1.27.72-1.56-2.55-.3-5.23-1.31-5.23-5.83 0-1.29.45-2.35 1.2-3.18-.12-.3-.52-1.52.12-3.16 0 0 .98-.32 3.2 1.21.93-.26 1.92-.39 2.9-.39.98 0 1.98.13 2.9.39 2.22-1.53 3.2-1.21 3.2-1.21.64 1.64.24 2.86.12 3.16.75.83 1.2 1.89 1.2 3.18 0 4.53-2.69 5.53-5.25 5.82.42.37.78 1.1.78 2.22v3.3c0 .31.21.68.8.56C19.96 21.39 23.25 17.08 23.25 12 23.25 5.63 18.27.5 12 .5Z"/>
-            </svg>
-          </a>
-        </article>
-
-        <!-- Col 3 -->
-        <article class="pj-card">
-          <h2 class="pj-title" lang="en">LANDSCAPE &amp; ARCHITECTURE</h2>
-
-          <ul class="pj-bul">
-            <li>
-              <span class="pj-bul-h">碩士論文</span><br>
-              複寫自然：當代自然式植栽設計與美學思考
-            </li>
-
-            <li>
-              <span class="pj-bul-h">碩士競圖</span><br>
-              <span lang="en">Art temporary installation in “Panamá la Vieja”</span><br>
-              <span lang="en">- METAMORPHOSE IN MULTIVERSE</span>
-            </li>
-
-            <li>
-              <span class="pj-bul-h">大學畢業設計</span><br>
-              米崙製造：場所精神潛像與顯影<br>
-              - 花蓮市美崙河海廊道建置計畫
-            </li>
-          </ul>
-
-          <p class="pj-foot">詳參下方連結</p>
-
-          <!-- icon：你把 href 換成你的雲端連結 -->
-          <a class="pj-icon pj-icon--drive" href="#" aria-label="Drive link">
-            <!-- Google Drive triangle (simple SVG) -->
-            <svg viewBox="0 0 24 24" width="30" height="30" aria-hidden="true">
-              <path fill="#0F9D58" d="M7.7 3.4h8.6l4.3 7.5h-8.6z"/>
-              <path fill="#4285F4" d="M3.4 20.6l4.3-7.5h8.6l-4.3 7.5z"/>
-              <path fill="#F4B400" d="M20.6 10.9l-4.3 7.5H7.7l4.3-7.5z"/>
-            </svg>
-          </a>
-        </article>
-
+        <!-- 你的三欄內容放這裡 -->
       </div>
     </section>
 
-    <!-- 底部導覽（沿用既有 nav） -->
     <nav class="nav" aria-label="Primary">
       <a href="./about.html">About Me</a>
       <a href="./education-experience.html">Education &amp; Experience</a>
