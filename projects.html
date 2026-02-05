@@ -1,35 +1,34 @@
+
 <!doctype html>
 <html lang="zh-Hant">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Projects</title>
-  <link rel="stylesheet" href="./styles.css?v=1" />
+
+  <!-- ✅ 這行請跟你的實際檔名一致：styles.css 或 style.css -->
+  <link rel="stylesheet" href="./styles.css" />
 </head>
 
 <body class="page-pj">
   <div class="hero hero--pj">
-    <!-- 回首頁熱區：沿用你已成功那組 -->
     <a href="./index.html" class="home-hotspot" aria-label="Back to home"></a>
 
-    <!-- 只做內文 -->
     <section class="pj" aria-label="Projects content">
       <div class="pj-grid">
-        <!-- =======================
-             Column 1: ETL
-        ======================== -->
-        <div class="pj-col pj-col--etl">
+    
+        <!-- 1) Medical ETL -->
+        <article class="pj-col">    
           <p class="pj-zh">類型：資料工程</p>
-
+    
           <p class="pj-zh">
-            目標：建構一套資料處理流程，將健檢資料庫中
-            <span lang="en">JSON</span>
-            資料建立階層式輸出，並於指定階層串接大型語言模型，將冗雜的醫學說明以精準的方式轉譯，最後輸出為易讀的體檢報告。
+            目標：建構一套資料處理流程，將健檢資料庫中 JSON 資料建立階層式輸出，
+            並於指定階層串接大型語言模型，將艱澀的醫學說明以精準的方式轉譯，
+            最終輸出為易讀的體檢報告。
           </p>
-
-          <div class="pj-gap"></div>
-          <p class="pj-zh">方法：</p>
-          <ol class="pj-ol pj-zh">
+    
+          <div class="pj-zh pj-gap">方法：</div>
+          <ol class="pj-zh pj-ol">
             <li>自資料庫擷取資料</li>
             <li>資料前處理</li>
             <li>階層式輸出</li>
@@ -37,91 +36,83 @@
             <li>輸出體檢報告</li>
             <li>護理師人工驗證</li>
           </ol>
-
-          <div class="pj-gap"></div>
-          <p class="pj-zh">
-            技術：<span lang="en">Python</span>、<span lang="en">pandas</span>、<span lang="en">FastAPI</span>、<span lang="en">LLM API</span>
+    
+          <p class="pj-zh pj-gap">
+            技術：<span lang="en">Python, pandas, FastAPI, LLM API</span>
           </p>
-
-          <div class="pj-gap"></div>
+    
           <p class="pj-zh">
-            成果：與原始報告相比，診斷 <span lang="en">100%</span> 無遺漏；模型處理 <span lang="en">99.9%</span> 無幻覺狀況。
+            成果：與原始報告相比，100% 無遺漏；模型處理 99.9% 無幻覺狀況。
           </p>
-        </div>
-
-        <!-- =======================
-             Column 2: Boston
-        ======================== -->
-        <div class="pj-col pj-col--bhp">
+        </article>
+    
+        <!-- 2) Boston -->
+        <article class="pj-col">    
           <p class="pj-zh">類型：機器學習（回歸）</p>
-
+    
           <p class="pj-zh">
-            目標：<span lang="en">Kaggle</span> 競賽，旨在建構高準確度的預測模型，以社會經濟與環境特徵為基礎，精確預測住宅中位房價。
+            目標：<span lang="en">Kaggle</span> 競賽，旨在建構高準確度的預測模型，
+            以社會經濟與環境特徵為基礎，精確預測住宅中位房價。
           </p>
-
-          <div class="pj-gap"></div>
-          <p class="pj-zh">方法：</p>
-          <ol class="pj-ol pj-zh">
+    
+          <div class="pj-zh pj-gap">方法：</div>
+          <ol class="pj-zh pj-ol">
             <li>讀取資料集，移除非特徵欄位，切分資料集</li>
             <li>
-              建立多模型：
-              <ul class="pj-ul pj-zh">
-                <li><span lang="en">PolynomialFeatures + StandardScaler + L1 / L2</span></li>
-                <li><span lang="en">StandardScaler + SVR</span></li>
-                <li><span lang="en">RandomForest</span></li>
-                <li><span lang="en">XGBoost</span></li>
+              建立多個模型：
+              <ul class="pj-ul">
+                <li lang="en">PolynomialFeatures + StandardScaler + L1 / L2</li>
+                <li lang="en">StandardScaler + SVR</li>
+                <li lang="en">RandomForest</li>
+                <li lang="en">XGBoost</li>
               </ul>
             </li>
             <li>以 <span lang="en">VotingRegressor</span> 加權集成訓練</li>
             <li>使用 <span lang="en">RMSE</span> 作為訓練與驗證評估指標</li>
           </ol>
-
-          <div class="pj-gap"></div>
-          <p class="pj-zh">
-            技術：<span lang="en">Python</span>、<span lang="en">scikit-learn</span>、<span lang="en">XGBoost</span>、機器學習模型管線設計與集成方法
+    
+          <p class="pj-zh pj-gap">
+            技術：<span lang="en">Python, scikit-learn, XGBoost</span>，機器學習模型管線設計與集成方法
           </p>
-
-          <div class="pj-gap"></div>
+    
           <p class="pj-zh">
-            成果：🥇 <span lang="en">1st Place</span>, Best Score (<span lang="en">RMSE</span>): <span lang="en">2.94700</span>
+            成果：🥇 <span lang="en">1st Place, Best Score (RMSE): 2.94700</span>
           </p>
-        </div>
-
-        <!-- =======================
-             Column 3: Landscape
-        ======================== -->
-        <div class="pj-col pj-col--land">
-          <ul class="pj-bul pj-zh">
-            <li>
-              碩士論文：<br/>
-              複寫自然：當代自然式植栽設計與美學思考
-            </li>
-
-            <li class="pj-gap">
-              碩士競圖：<br/>
-              <span lang="en">Art temporary installation in “Panamá la Vieja”</span><br/>
+        </article>
+    
+        <!-- 3) Landscape -->
+        <article class="pj-col">    
+          <ul class="pj-zh pj-bul">
+            <li>碩士論文：<br>複寫自然：當代自然式植栽設計與美學思考</li>
+            <li>碩士競圖：<br>
+              <span lang="en">Art temporary installation in “Panamá la Vieja”</span><br>
               <span lang="en">- METAMORPHOSE IN MULTIVERSE</span>
             </li>
-
-            <li class="pj-gap">
-              大學畢業設計：<br/>
-              米倉製造：場所精神潛像與轉譯<br/>
-              - 花蓮市美崙河廊廊道建置計畫
+            <li>大學畢業設計：<br>
+              米崙製造：場所精神潛像與顯影<br>
+              - 花蓮市美崙河海廊道建置計畫
             </li>
           </ul>
-
-          <div class="pj-gap"></div>
-          <p class="pj-zh">詳參下方連結</p>
-        </div>
+        </article>
+    
       </div>
+    
+      <!-- ✅ 透明點擊區塊：疊在右下角 logos 上 -->
+      <a class="pj-hotspot pj-hotspot--etl"
+         href="https://github.com/zzlinislatszy/Medical-Examination-Data-ETL-System"
+         target="_blank" aria-label="Medical Examination Data ETL System GitHub"></a>
+    
+      <a class="pj-hotspot pj-hotspot--boston"
+         href="https://github.com/zzlinislatszy/Boston-Housing-Price-Prediction"
+         target="_blank" aria-label="Boston Housing Price Prediction GitHub"></a>
+    
+      <a class="pj-hotspot pj-hotspot--land"
+         href="https://drive.google.com/file/d/1CMyYPhNeoFStYpQo26wQwtt8sQxEVfO7/view?usp=sharing"
+         target="_blank" aria-label="Landscape & Architecture Google Drive"></a>
     </section>
+    
 
-    <!-- ✅ 透明點擊熱區：你說不要改 code，我只照你既有 class 放上去 -->
-    <a class="pj-hotspot pj-hotspot--etl"   href="https://github.com/zzlinislatszy/Medical-Examination-Data-ETL-System" target="_blank" rel="noopener noreferrer" aria-label="Open ETL GitHub"></a>
-    <a class="pj-hotspot pj-hotspot--boston" href="https://github.com/zzlinislatszy/Boston-Housing-Price-Prediction" target="_blank" rel="noopener noreferrer" aria-label="Open Boston GitHub"></a>
-    <a class="pj-hotspot pj-hotspot--land"  href="https://drive.google.com/file/d/1CMyYPhNeoFStYpQo26wQwtt8sQxEVfO7/view?usp=sharing" target="_blank" rel="noopener noreferrer" aria-label="Open Landscape Google Drive"></a>
 
-    <!-- 底部導覽（沿用 about 的邏輯） -->
     <nav class="nav" aria-label="Primary">
       <a href="./about.html">About Me</a>
       <a href="./education-experience.html">Education &amp; Experience</a>
