@@ -273,6 +273,10 @@ body{
   --ee-exp-col-year: 80px;
 
   --ee-exp-row-gap: 14px;
+  --ee-right-shift: -28px; /* 右欄往左：負值 */
+  --ee-edexp-gap: 56px; /* Education 到 Experience 的距離：你要下移就加大 */
+
+
 }
 
 
@@ -287,8 +291,15 @@ body{
   z-index: 2;
   color: var(--ee-color);
 }
+.ee-left .ee-block--gap{
+  margin-top: var(--ee-edexp-gap);
+}
 
 /* 兩欄：左 Education/Experience；右 Technical Tools */
+.ee-right{
+  transform: translateX(var(--ee-right-shift));
+}
+
 .ee-grid{
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -313,7 +324,7 @@ body{
   font-family: "GenRyuMin TW", serif;
   font-size: var(--ee-zh-size);
   letter-spacing: var(--ee-zh-track);
-  line-height: 1.85;
+  line-height: var(--ee-zh-leading);
 }
 
 /* 英文內文：13 */
@@ -362,11 +373,12 @@ body{
 }
 
 /* 公司（英文 13 / Copperplate） */
-.ee-exp-row .ee-company{
+.ee-company{
   font-family: "COPPERPLATEGOTHIC 29 BC","Copperplate Gothic","Copperplate",serif;
-  font-size: var(--ee-en-size);        /* 13 */
-  letter-spacing: 0.03em;             /* 依你標註 */
-  white-space: nowrap;                 /* ✅ 避免換行把整列擠爛 */
+  font-size: var(--ee-en-size);
+  letter-spacing: var(--ee-en-track);
+  text-transform: uppercase;
+  white-space: nowrap;
 }
 
 /* 中間的 | 永遠置中且對齊 */
@@ -376,19 +388,29 @@ body{
 }
 
 /* 職稱（中文 11 / GenRyu / tracking 45 / leading 2） */
-.ee-exp-row .ee-role{
+.ee-role{
   font-family: "GenRyuMin TW", serif;
-  font-size: var(--ee-zh-size);        /* 11 */
-  letter-spacing: var(--ee-zh-track);  /* 0.045em */
-  line-height: var(--ee-zh-leading);   /* 2 */
-  white-space: nowrap;
+  font-size: var(--ee-zh-size);
+  letter-spacing: var(--ee-zh-track);
+  line-height: var(--ee-zh-leading);
+}
+
+.ee-exp-row{
+  display: grid;
+  grid-template-columns:
+    var(--ee-exp-col-company)
+    var(--ee-exp-col-bar)
+    var(--ee-exp-col-role)
+    var(--ee-exp-col-year);
+  align-items: baseline;
+  margin: 0 0 var(--ee-exp-row-gap);
 }
 
 /* 年份（數字 11） */
 .ee-exp-row .ee-year{
   font-family: "COPPERPLATEGOTHIC 29 BC","Copperplate Gothic","Copperplate",serif;
-  font-size: var(--ee-num-size);       /* 11 */
-  letter-spacing: var(--ee-zh-track);  /* 你想要數字跟中文對齊，就用 0.045em */
+  font-size: var(--ee-num-size);
+  letter-spacing: var(--ee-num-track);
   text-align: left;
   white-space: nowrap;
 }
@@ -414,4 +436,9 @@ body{
 /* Tools 區塊：間距稍微小一點 */
 .ee-right .ee-list--gap{
   margin-top: 20px;
+}
+
+.ee-bar{
+  text-align: center;
+  opacity: .9;
 }
