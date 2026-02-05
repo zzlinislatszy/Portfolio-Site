@@ -521,16 +521,16 @@ body{
 
 /* 這三個位置請你照目標圖微調（先給「接近你截圖」的起點） */
 .page-pj .pj-hotspot--etl{
-  left: 555px;
-  top: 685px;
+  left: 554px;
+  top: 686px;
 }
 .page-pj .pj-hotspot--boston{
-  left: 960px;
-  top: 685px;
+  left: 965px;
+  top: 686px;
 }
 .page-pj .pj-hotspot--land{
-  left: 1395px;
-  top: 685px;
+  left: 1393px;
+  top: 686px;
 }
 
 /* （除錯用）要看熱區位置就解除註解 */
