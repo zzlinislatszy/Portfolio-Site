@@ -455,10 +455,10 @@ body{
 
   /* 內文容器定位（你只要對齊目標就改這三個） */
   --pj-top: 200px;        /* ✅ 先給合理值：你照目標微調 */
-  --pj-left: 230px;       /* ✅ 跟 About / EE 左緣一致 */
-  --pj-width: 1140px;     /* 三欄寬度 */
+  --pj-left: 240px;       /* ✅ 跟 About / EE 左緣一致 */
+  --pj-width: 1562px;     /* 三欄寬度 */
 
-  --pj-col-gap: 120px;    /* 三欄間距 */
+  --pj-col-gap: 521px;    /* 三欄間距 */
 }
 
 /* Projects 內文容器：和 EE 一樣用 absolute 鎖位置 */
@@ -521,8 +521,8 @@ body{
 
 /* 這三個位置請你照目標圖微調（先給「接近你截圖」的起點） */
 .page-pj .pj-hotspot--etl{
-  left: 530px;
-  top: 650px;
+  left: 545px;
+  top: 700px;
 }
 .page-pj .pj-hotspot--boston{
   left: 950px;
