@@ -229,3 +229,79 @@ body{
   margin: 0 auto;
   padding: 64px 20px 120px;
 }
+
+/* =========================
+   Education & Experience
+   ========================= */
+:root{
+  --ee-left: 260px;
+  --ee-top: 220px;
+  --ee-width: 900px;
+  --ee-gap: 120px;
+}
+
+.hero--ee{
+  background-image: url("./assets/hero_ee.jpg");
+}
+
+.ee{
+  position: absolute;
+  left: var(--ee-left);
+  top: var(--ee-top);
+  width: var(--ee-width);
+  z-index: 2;
+
+  font-family: "GenRyuMin TW", serif;
+  color: #4f270d;
+}
+
+.ee-title{
+  font-family:
+    "Copperplate Gothic",
+    "Copperplate",
+    "Georgia",
+    serif;
+  font-size: 18px;
+  letter-spacing: .08em;
+  margin: 0 0 48px;
+}
+
+.ee-grid{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: var(--ee-gap);
+}
+
+.ee-h{
+  font-family:
+    "Copperplate Gothic",
+    "Copperplate",
+    serif;
+  font-size: 12px;
+  letter-spacing: .12em;
+  margin: 0 0 14px;
+}
+
+.ee-rows{
+  display: grid;
+  row-gap: 8px;
+}
+
+.ee-row{
+  display: grid;
+  grid-template-columns: 1fr auto;
+  column-gap: 16px;
+  font-size: 11px;
+  letter-spacing: .04em;
+}
+
+.ee-list{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  row-gap: 6px;
+  font-size: 11px;
+  letter-spacing: .04em;
+}
+
