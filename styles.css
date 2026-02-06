@@ -438,30 +438,30 @@ body{
 
 /* PJ page hero */
 .hero--pj{
-  background-image: url("./assets/hero_pj.jpg"); /* 你說的 hero_pj */
+  background-image: url("./assets/hero_pj.jpg");
 }
 
-/* PJ layout vars：只調這裡就會對齊目標圖 */
+/* PJ layout vars：用 vw/vh 百分比取代固定 px */
 .page-pj{
   --pj-color: var(--abt-color);
 
-  /* 內文規格：完全跟 About / EE */
+  /* 內文規格：字體大小保持 px（確保可讀性） */
   --pj-zh-size: var(--abt-size);        /* 11px */
   --pj-zh-track: var(--abt-tracking);   /* 0.045em */
   --pj-zh-leading: var(--abt-leading);  /* 2 */
 
-  --pj-hd-size: 15px;     /* 跟 EE 標題 */
+  --pj-hd-size: 15px;
   --pj-hd-track: 0.06em;
 
-  /* 內文容器定位（你只要對齊目標就改這三個） */
-  --pj-top: 200px;        /* ✅ 先給合理值：你照目標微調 */
-  --pj-left: 220px;       /* ✅ 跟 About / EE 左緣一致 */
-  --pj-width: 1140px;     /* 三欄寬度 */
+  /* ✅ 內文容器定位：改用視窗百分比 */
+  --pj-top: 10.5vh;      /* 200px ÷ 1920 ≈ 10.5% 視窗高度 */
+  --pj-left: 11.5vw;     /* 220px ÷ 1920 ≈ 11.5% 視窗寬度 */
+  --pj-width: 59.4vw;    /* 1140px ÷ 1920 ≈ 59.4% 視窗寬度 */
 
-  --pj-col-gap: 120px;    /* 三欄間距 */
+  --pj-col-gap: 6.25vw;  /* 120px ÷ 1920 ≈ 6.25% 視窗寬度 */
 }
 
-/* Projects 內文容器：和 EE 一樣用 absolute 鎖位置 */
+/* Projects 內文容器 */
 .page-pj .pj{
   position: absolute;
   top: var(--pj-top);
@@ -479,7 +479,7 @@ body{
   align-items: start;
 }
 
-/* 欄位標題（英文 Copperplate） */
+/* 欄位標題 */
 .pj-hd{
   font-size: var(--pj-hd-size);
   letter-spacing: var(--pj-hd-track);
@@ -487,7 +487,7 @@ body{
   text-transform: uppercase;
 }
 
-/* 中文內文（完全比照 About / EE） */
+/* 中文內文 */
 .pj-zh{
   font-family: "GenRyuMin TW", serif;
   font-size: var(--pj-zh-size);
@@ -503,12 +503,12 @@ body{
   padding: 0;
 }
 
-/* 內文段落間「小空一格」 */
+/* 內文段落間距 */
 .pj-gap{ 
   margin-top: 18px; 
 }
 
-/* 有序/無序列表 */
+/* 列表 */
 .pj-ol, .pj-ul, .pj-bul{
   margin: 8px 0 0 18px;
   padding: 0;
@@ -518,47 +518,40 @@ body{
   margin: 0 0 8px;
 }
 
-/* ✅ 透明點擊熱區：疊在底圖 logo 上（只點 logo 就會開連結） */
+/* ✅ 透明點擊熱區：改用視窗百分比 */
 .pj-hotspot{
   position: fixed;
   z-index: 9999;
-  width: 26px;     /* 你可依 logo 實際大小微調 */
-  height: 26px;
+  width: 1.35vw;   /* 26px ÷ 1920 ≈ 1.35vw */
+  height: 1.35vw;  /* 保持正方形 */
   background: transparent;
 }
 
-/* 這三個位置請你照目標圖微調（先給「接近你截圖」的起點） */
+/* ✅ Logo 點擊位置：改用視窗百分比 */
 .page-pj .pj-hotspot--etl{
-  left: 554px;
-  top: 686px;
+  left: 28.85vw;   /* 554px ÷ 1920 */
+  top: 63.5vh;     /* 686px ÷ 1080（假設你的設計稿是 1920x1080） */
 }
 
 .page-pj .pj-hotspot--boston{
-  left: 969px;
-  top: 686px;
+  left: 50.5vw;    /* 969px ÷ 1920 */
+  top: 63.5vh;
 }
 
 .page-pj .pj-hotspot--land{
-  left: 1393px;
-  top: 686px;
+  left: 72.55vw;   /* 1393px ÷ 1920 */
+  top: 63.5vh;
 }
 
-
-/* =========================
-   PJ: Align body text with title (fine-tune)
-   ========================= */
-
-/* 左一欄（ETL）：微調往左 */
+/* ✅ 內文對齊微調：改用 vw */
 .page-pj .pj-grid > .pj-col:nth-child(1){
-  transform: translateX(25px) !important;
+  transform: translateX(1.3vw) !important;  /* 25px ÷ 1920 */
 }
 
-/* 中間欄（Boston）：微調往左 */
 .page-pj .pj-grid > .pj-col:nth-child(2){
-  transform: translateX(30px) !important;
+  transform: translateX(1.56vw) !important; /* 30px ÷ 1920 */
 }
 
-/* 右一欄（Landscape）：微調往左 */
 .page-pj .pj-grid > .pj-col:nth-child(3){
-  transform: translateX(10px) !important;
+  transform: translateX(0.52vw) !important; /* 10px ÷ 1920 */
 }
