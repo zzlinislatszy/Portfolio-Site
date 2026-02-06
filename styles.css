@@ -524,7 +524,8 @@ body{
   z-index: 9999;
   width: 1.35vw;   /* 26px ÷ 1920 ≈ 1.35vw */
   height: 1.35vw;  /* 保持正方形 */
-  background: transparent;
+  background: rgba(255, 0, 0, 0.2);
+  border: 2px solid red;
 }
 
 /* ✅ Logo 點擊位置：改用視窗百分比 */
