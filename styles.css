@@ -458,7 +458,7 @@ body{
   --pj-left: 18vw;     /* 220px ÷ 1920 ≈ 11.5% 視窗寬度 */
   --pj-width: 70vw;    /* 1140px ÷ 1920 ≈ 59.4% 視窗寬度 */
 
-  --pj-col-gap: 8vw;  /* 120px ÷ 1920 ≈ 6.25% 視窗寬度 */
+  --pj-col-gap: 10vw;  /* 120px ÷ 1920 ≈ 6.25% 視窗寬度 */
 }
 
 /* Projects 內文容器 */
@@ -535,12 +535,12 @@ body{
 }
 
 .page-pj .pj-hotspot--boston{
-  left: 65vw;    /* 969px ÷ 1920 */
+  left: 64vw;    /* 969px ÷ 1920 */
   top: 80vh;
 }
 
 .page-pj .pj-hotspot--land{
-  left: 93vw;   /* 1393px ÷ 1920 */
+  left: 92vw;   /* 1393px ÷ 1920 */
   top: 80vh;
 }
 
