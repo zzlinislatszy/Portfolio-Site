@@ -522,31 +522,31 @@ body{
 .pj-hotspot{
   position: fixed;
   z-index: 9999;
-  width: 1.75vw;   /* 26px ÷ 1920 ≈ 1.35vw */
-  height: 1.75vw;  /* 保持正方形 */
+  width: 1.8vw;   /* 26px ÷ 1920 ≈ 1.35vw */
+  height: 1.8vw;  /* 保持正方形 */
   background: rgba(255, 0, 0, 0.2);
   border: 2px solid red;
 }
 
 /* ✅ Logo 點擊位置：改用視窗百分比 */
 .page-pj .pj-hotspot--etl{
-  left: 37.5vw;   /* 554px ÷ 1920 */
+  left: 37vw;   /* 554px ÷ 1920 */
   top: 80vh;     /* 686px ÷ 1080（假設你的設計稿是 1920x1080） */
 }
 
 .page-pj .pj-hotspot--boston{
-  left: 50.5vw;    /* 969px ÷ 1920 */
-  top: 63.5vh;
+  left: 70vw;    /* 969px ÷ 1920 */
+  top: 80vh;
 }
 
 .page-pj .pj-hotspot--land{
-  left: 72.55vw;   /* 1393px ÷ 1920 */
-  top: 63.5vh;
+  left: 90vw;   /* 1393px ÷ 1920 */
+  top: 80vh;
 }
 
 /* ✅ 內文對齊微調：改用 vw */
 .page-pj .pj-grid > .pj-col:nth-child(1){
-  transform: translateX(0.1vw) !important;  /* 25px ÷ 1920 */
+  transform: translateX(-0.3vw) !important;  /* 25px ÷ 1920 */
 }
 
 .page-pj .pj-grid > .pj-col:nth-child(2){
