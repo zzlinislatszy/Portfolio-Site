@@ -456,7 +456,7 @@ body{
   /* ✅ 內文容器定位：改用視窗百分比 */
   --pj-top: 23vh;      /* 200px ÷ 1920 ≈ 10.5% 視窗高度 */
   --pj-left: 18vw;     /* 220px ÷ 1920 ≈ 11.5% 視窗寬度 */
-  --pj-width: 65vw;    /* 1140px ÷ 1920 ≈ 59.4% 視窗寬度 */
+  --pj-width: 70vw;    /* 1140px ÷ 1920 ≈ 59.4% 視窗寬度 */
 
   --pj-col-gap: 8vw;  /* 120px ÷ 1920 ≈ 6.25% 視窗寬度 */
 }
@@ -530,8 +530,8 @@ body{
 
 /* ✅ Logo 點擊位置：改用視窗百分比 */
 .page-pj .pj-hotspot--etl{
-  left: 40vw;   /* 554px ÷ 1920 */
-  top: 75vh;     /* 686px ÷ 1080（假設你的設計稿是 1920x1080） */
+  left: 38.5vw;   /* 554px ÷ 1920 */
+  top: 80vh;     /* 686px ÷ 1080（假設你的設計稿是 1920x1080） */
 }
 
 .page-pj .pj-hotspot--boston{
@@ -546,13 +546,13 @@ body{
 
 /* ✅ 內文對齊微調：改用 vw */
 .page-pj .pj-grid > .pj-col:nth-child(1){
-  transform: translateX(-3vw) !important;  /* 25px ÷ 1920 */
+  transform: translateX(-2vw) !important;  /* 25px ÷ 1920 */
 }
 
 .page-pj .pj-grid > .pj-col:nth-child(2){
-  transform: translateX(1.56vw) !important; /* 30px ÷ 1920 */
+  transform: translateX(1.54vw) !important; /* 30px ÷ 1920 */
 }
 
 .page-pj .pj-grid > .pj-col:nth-child(3){
-  transform: translateX(3vw) !important; /* 10px ÷ 1920 */
+  transform: translateX(4vw) !important; /* 10px ÷ 1920 */
 }
