@@ -530,23 +530,23 @@ body{
 
 /* ✅ Logo 點擊位置：改用視窗百分比 */
 .page-pj .pj-hotspot--etl{
-  left: 37vw;   /* 554px ÷ 1920 */
+  left: 36.8vw;   /* 554px ÷ 1920 */
   top: 80vh;     /* 686px ÷ 1080（假設你的設計稿是 1920x1080） */
 }
 
 .page-pj .pj-hotspot--boston{
-  left: 70vw;    /* 969px ÷ 1920 */
+  left: 60vw;    /* 969px ÷ 1920 */
   top: 80vh;
 }
 
 .page-pj .pj-hotspot--land{
-  left: 90vw;   /* 1393px ÷ 1920 */
+  left: 95vw;   /* 1393px ÷ 1920 */
   top: 80vh;
 }
 
 /* ✅ 內文對齊微調：改用 vw */
 .page-pj .pj-grid > .pj-col:nth-child(1){
-  transform: translateX(-0.3vw) !important;  /* 25px ÷ 1920 */
+  transform: translateX(-0.2vw) !important;  /* 25px ÷ 1920 */
 }
 
 .page-pj .pj-grid > .pj-col:nth-child(2){
@@ -554,5 +554,5 @@ body{
 }
 
 .page-pj .pj-grid > .pj-col:nth-child(3){
-  transform: translateX(0.5vw) !important; /* 10px ÷ 1920 */
+  transform: translateX(0.1vw) !important; /* 10px ÷ 1920 */
 }
