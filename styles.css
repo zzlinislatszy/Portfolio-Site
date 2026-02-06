@@ -530,7 +530,7 @@ body{
 
 /* ✅ Logo 點擊位置：改用視窗百分比 */
 .page-pj .pj-hotspot--etl{
-  left: 38.2vw;   /* 554px ÷ 1920 */
+  left: 37.5vw;   /* 554px ÷ 1920 */
   top: 80vh;     /* 686px ÷ 1080（假設你的設計稿是 1920x1080） */
 }
 
@@ -546,13 +546,13 @@ body{
 
 /* ✅ 內文對齊微調：改用 vw */
 .page-pj .pj-grid > .pj-col:nth-child(1){
-  transform: translateX(-1.9vw) !important;  /* 25px ÷ 1920 */
+  transform: translateX(0.1vw) !important;  /* 25px ÷ 1920 */
 }
 
 .page-pj .pj-grid > .pj-col:nth-child(2){
-  transform: translateX(-1vw) !important; /* 30px ÷ 1920 */
+  transform: translateX(0.3vw) !important; /* 30px ÷ 1920 */
 }
 
 .page-pj .pj-grid > .pj-col:nth-child(3){
-  transform: translateX(-2vw) !important; /* 10px ÷ 1920 */
+  transform: translateX(0.5vw) !important; /* 10px ÷ 1920 */
 }
