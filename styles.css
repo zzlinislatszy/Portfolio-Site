@@ -546,11 +546,11 @@ body{
 
 /* ✅ 內文對齊微調：改用 vw */
 .page-pj .pj-grid > .pj-col:nth-child(1){
-  transform: translateX(-0.3vw) !important;  /* 25px ÷ 1920 */
+  transform: translateX(-0.8vw) !important;  /* 25px ÷ 1920 */
 }
 
 .page-pj .pj-grid > .pj-col:nth-child(2){
-  transform: translateX(0.3vw) !important; /* 30px ÷ 1920 */
+  transform: translateX(-0.2vw) !important; /* 30px ÷ 1920 */
 }
 
 .page-pj .pj-grid > .pj-col:nth-child(3){
