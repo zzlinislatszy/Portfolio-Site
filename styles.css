@@ -454,8 +454,8 @@ body{
   --pj-hd-track: 0.06em;
 
   /* ✅ 內文容器定位：改用視窗百分比 */
-  --pj-top: 20vh;      /* 200px ÷ 1920 ≈ 10.5% 視窗高度 */
-  --pj-left: 30vw;     /* 220px ÷ 1920 ≈ 11.5% 視窗寬度 */
+  --pj-top: 25vh;      /* 200px ÷ 1920 ≈ 10.5% 視窗高度 */
+  --pj-left: 25vw;     /* 220px ÷ 1920 ≈ 11.5% 視窗寬度 */
   --pj-width: 59.4vw;    /* 1140px ÷ 1920 ≈ 59.4% 視窗寬度 */
 
   --pj-col-gap: 6.25vw;  /* 120px ÷ 1920 ≈ 6.25% 視窗寬度 */
@@ -522,16 +522,16 @@ body{
 .pj-hotspot{
   position: fixed;
   z-index: 9999;
-  width: 1.35vw;   /* 26px ÷ 1920 ≈ 1.35vw */
-  height: 1.35vw;  /* 保持正方形 */
+  width: 1.45vw;   /* 26px ÷ 1920 ≈ 1.35vw */
+  height: 1.45vw;  /* 保持正方形 */
   background: rgba(255, 0, 0, 0.2);
   border: 2px solid red;
 }
 
 /* ✅ Logo 點擊位置：改用視窗百分比 */
 .page-pj .pj-hotspot--etl{
-  left: 40vw;   /* 554px ÷ 1920 */
-  top: 80vh;     /* 686px ÷ 1080（假設你的設計稿是 1920x1080） */
+  left: 37vw;   /* 554px ÷ 1920 */
+  top: 78vh;     /* 686px ÷ 1080（假設你的設計稿是 1920x1080） */
 }
 
 .page-pj .pj-hotspot--boston{
