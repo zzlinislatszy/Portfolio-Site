@@ -438,8 +438,11 @@ body{
 
 /* PJ page hero：外層只當黑色舞台容器 */
 .hero--pj{
-  background-image: none; /* ✅ 不再用 cover 當背景，避免裁切造成跑位 */
+  background-image: url("./assets/hero_pj.jpg");
+  background-size: cover;
+  background-position: center;
 }
+
 
 /* ✅ 以固定比例舞台承載 hero_pj，確保任何螢幕都「不裁切」 */
 .page-pj .pj-stage{
