@@ -4,98 +4,80 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Projects</title>
+  <link rel="stylesheet" href="./styles.css?v=1" />
   <style>
-    /* 基礎樣式重置 */
-    body, html {
-      margin: 0;
-      padding: 0;
-      width: 100%;
-      background-color: #f4f4f4; /* 視情況調整背景色 */
-    }
-
+    /* 針對 Projects 頁面的特別修正 */
     .hero--pj {
+      background-image: none !important; /* 讓路給 img 標籤 */
       display: flex;
       flex-direction: column;
+      justify-content: center; /* 讓圖片垂直居中 */
       align-items: center;
-      width: 100%;
+      background-color: #000;
     }
 
-    /* 關鍵：包裹圖片與 SVG 的容器 */
-    .pj-content-wrapper {
+    .pj-container {
       position: relative;
       width: 100%;
-      max-width: 100%; /* 確保不超過螢幕 */
-      line-height: 0;   /* 消除圖片下方縫隙 */
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
-    /* 背景圖片：寬度 100% 自適應 */
+    /* 讓 6000x3375 的大圖在不裁切的情況下縮放 */
+    .pj-image-wrapper {
+      position: relative;
+      width: 100vw;
+      /* 按照 6000:3375 = 16:9 的比例計算高度，確保 SVG 完美覆蓋 */
+      aspect-ratio: 6000 / 3375;
+      max-height: 100vh;
+    }
+
     .pj-background-img {
       width: 100%;
-      height: auto;
+      height: 100%;
+      object-fit: contain;
       display: block;
     }
 
-    /* SVG 疊加層：絕對定位並完全覆蓋圖片 */
     .pj-svg-overlay {
       position: absolute;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
-      pointer-events: none; /* 預設不阻擋點擊 */
     }
 
-    /* 讓 SVG 內的 <a> 標籤可以被點擊 */
-    .pj-svg-overlay a {
-      pointer-events: auto;
-      cursor: pointer;
-    }
-
-    /* 導覽列樣式 */
-    .nav {
-      padding: 20px;
-      text-align: center;
-      background: #fff;
-      width: 100%;
-    }
-    .nav a {
-      margin: 0 15px;
-      text-decoration: none;
-      color: #333;
-    }
-    .nav a.current {
-      font-weight: bold;
-      border-bottom: 2px solid #000;
-    }
-
-    /* 測試用：把 transparent 改成半透明紅，就能看到點擊範圍 */
+    /* 測試模式：將此 class 刪除或將 fill 改為 transparent */
     .debug-rect {
-      fill: rgba(255, 0, 0, 0.3);
+      fill: rgba(255, 0, 0, 0.4); /* 半透明紅，方便對位置 */
+      cursor: pointer;
     }
   </style>
 </head>
 
 <body class="page-pj">
   <div class="hero hero--pj">
-
-    <div class="pj-content-wrapper">
-      <img src="./Screenshot 2026-02-07 at 21.45.12.jpg" class="pj-background-img" alt="Projects Overview">
-      
-      <svg viewBox="0 0 6000 3375" class="pj-svg-overlay">
+    
+    <div class="pj-container">
+      <div class="pj-image-wrapper">
+        <img src="./assets/hero_pj.jpg" class="pj-background-img" alt="Projects Overview">
         
-        <a href="https://github.com/zzlinislatszy/Medical-Examination-Data-ETL-System" target="_blank">
-          <rect x="2150" y="2780" width="180" height="180" fill="transparent" class="debug-rect" />
-        </a>
+        <svg viewBox="0 0 6000 3375" class="pj-svg-overlay">
+          <a href="https://github.com/你的專案1" target="_blank">
+            <rect x="2135" y="2780" width="180" height="180" class="debug-rect" fill="transparent" />
+          </a>
 
-        <a href="https://github.com/zzlinislatszy/Boston-Housing-Price-Prediction" target="_blank">
-          <rect x="3820" y="2780" width="180" height="180" fill="transparent" class="debug-rect" />
-        </a>
+          <a href="https://github.com/你的專案2" target="_blank">
+            <rect x="3810" y="2780" width="180" height="180" class="debug-rect" fill="transparent" />
+          </a>
 
-        <a href="https://drive.google.com/file/d/1CMyYPhNeoFStYpQo26wQwtt8sQxEVfO7/view?usp=sharing" target="_blank">
-          <rect x="5480" y="2780" width="220" height="180" fill="transparent" class="debug-rect" />
-        </a>
-
-      </svg>
+          <a href="https://drive.google.com/..." target="_blank">
+            <rect x="5460" y="2780" width="220" height="180" class="debug-rect" fill="transparent" />
+          </a>
+        </svg>
+      </div>
     </div>
 
     <nav class="nav" aria-label="Primary">
@@ -114,8 +96,10 @@
       pt.x = e.clientX;
       pt.y = e.clientY;
       const svgP = pt.matrixTransform(svg.getScreenCTM().inverse());
-      console.log(`精確座標：x=${Math.round(svgP.x)}, y=${Math.round(svgP.y)}`);
-      alert(`座標已紀錄在 Console：x=${Math.round(svgP.x)}, y=${Math.round(svgP.y)}`);
+      const coords = `x=${Math.round(svgP.x)}, y=${Math.round(svgP.y)}`;
+      console.log(coords);
+      // 點擊後在頁面標題顯示座標，方便你在手機測試
+      document.title = coords;
     });
   </script>
 </body>
