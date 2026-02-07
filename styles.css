@@ -423,20 +423,3 @@ body{
   overflow: hidden;
 }
 
-/* Projects logo hotspots */
-.page-pj .pj-hotspot{
-  position: absolute;
-  z-index: 5;
-  display: block;
-  background: transparent;
-  cursor: pointer;
-  /* 讓點擊更穩：避免被其他元素吃掉 */
-  pointer-events: auto;
-}
-
-
-.page-pj .pj-hotspot{
-  background: rgba(255,0,0,.18);
-  outline: 2px solid rgba(255,0,0,.55);
-}
-
