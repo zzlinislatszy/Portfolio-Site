@@ -156,32 +156,6 @@ body{
 }
 
 /* =========================
-   Home Hotspot (左上角正方形回首頁)
-   ========================= */
-.home-hotspot{
-  position: fixed;
-  z-index: 9999;
-  cursor: pointer;
-
-  top: var(--home-top);
-  left: var(--home-left);
-  width: var(--home-size);
-  height: var(--home-size);
-
-  background: transparent;
-  outline: none;
-  text-decoration: none;
-}
-
-/* （除錯用）如果你想看熱區位置，把下面註解打開 */
-/*
-.home-hotspot{
-  background: rgba(255,0,0,.18);
-  outline: 2px solid rgba(255,0,0,.55);
-}
-*/
-
-/* =========================
    About Copy (鎖死規格)
    ========================= */
 /* 你 HTML 裡用的是 <div class="about-text"><p>...</p></div>
