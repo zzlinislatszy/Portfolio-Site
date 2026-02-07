@@ -418,12 +418,8 @@ body{
   background-repeat: no-repeat;
 }
 
-/* Projects 頁本身不需要任何內文容器 */
-.page-pj{
-  overflow: hidden;
-} */
-
-.pj-aspect-container::after{
+/* PJ 專用：補上與 hero::before 相同的陰影漸層 */
+.page-pj .pj-aspect-container::after{
   content:"";
   position:absolute;
   inset:0;
@@ -433,6 +429,14 @@ body{
     rgba(0,0,0,0.08) 65%,
     rgba(0,0,0,0.22) 100%
   );
-  pointer-events:none;
+  pointer-events: none;
 }
+
+
+/* Projects 頁本身不需要任何內文容器 */
+.page-pj{
+  overflow: hidden;
+} */
+
+
 
