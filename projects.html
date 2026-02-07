@@ -6,41 +6,44 @@
   <title>Projects</title>
   <link rel="stylesheet" href="./styles.css?v=1" />
   <style>
-    /* 針對 Projects 頁面的特別修正 */
+    /* 1. 確保外層容器不跑位 */
     .hero--pj {
-      background-image: none !important; /* 讓路給 img 標籤 */
-      display: flex;
-      flex-direction: column;
-      justify-content: center; /* 讓圖片垂直居中 */
-      align-items: center;
+      background-image: none !important; 
       background-color: #000;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100vw;
+      height: 100vh;
+      overflow: hidden;
+      position: relative;
     }
 
-    .pj-container {
+    /* 2. 這是核心：讓 wrapper 的大小永遠等於圖片實際顯示的大小 */
+    .pj-image-wrapper {
       position: relative;
-      width: 100%;
-      height: 100%;
+      /* 比例必須與你的 6000x3375 一致 */
+      aspect-ratio: 6000 / 3375;
+      
+      /* 確保在窄螢幕或長螢幕都不會超出邊界 */
+      width: auto;
+      height: auto;
+      max-width: 100%;
+      max-height: 100%;
+      
       display: flex;
       align-items: center;
       justify-content: center;
     }
 
-    /* 讓 6000x3375 的大圖在不裁切的情況下縮放 */
-    .pj-image-wrapper {
-      position: relative;
-      width: 100vw;
-      /* 按照 6000:3375 = 16:9 的比例計算高度，確保 SVG 完美覆蓋 */
-      aspect-ratio: 6000 / 3375;
-      max-height: 100vh;
-    }
-
     .pj-background-img {
       width: 100%;
       height: 100%;
-      object-fit: contain;
       display: block;
+      object-fit: contain; /* 確保圖片不被拉伸 */
     }
 
+    /* 3. SVG 鎖死在 wrapper 內部，這樣就不會受外部黑邊影響 */
     .pj-svg-overlay {
       position: absolute;
       top: 0;
@@ -49,9 +52,9 @@
       height: 100%;
     }
 
-    /* 測試模式：將此 class 刪除或將 fill 改為 transparent */
+    /* 測試模式：對位準確後請將 fill 改為 transparent */
     .debug-rect {
-      fill: rgba(255, 0, 0, 0.4); /* 半透明紅，方便對位置 */
+      fill: rgba(255, 0, 0, 0.4); 
       cursor: pointer;
     }
   </style>
@@ -60,24 +63,22 @@
 <body class="page-pj">
   <div class="hero hero--pj">
     
-    <div class="pj-container">
-      <div class="pj-image-wrapper">
-        <img src="./assets/hero_pj.jpg" class="pj-background-img" alt="Projects Overview">
-        
-        <svg viewBox="0 0 6000 3375" class="pj-svg-overlay">
-          <a href="https://github.com/zzlinislatszy/Medical-Examination-Data-ETL-System" target="_blank">
-            <rect x="2135" y="2780" width="180" height="180" class="debug-rect" fill="transparent" />
-          </a>
+    <div class="pj-image-wrapper">
+      <img src="./assets/hero_pj.jpg" class="pj-background-img" alt="Projects Overview">
+      
+      <svg viewBox="0 0 6000 3375" class="pj-svg-overlay">
+        <a href="https://github.com/zzlinislatszy/Medical-Examination-Data-ETL-System" target="_blank">
+          <rect x="2135" y="2780" width="180" height="180" class="debug-rect" />
+        </a>
 
-          <a href="https://github.com/zzlinislatszy/Boston-Housing-Price-Prediction" target="_blank">
-            <rect x="3810" y="2780" width="180" height="180" class="debug-rect" fill="transparent" />
-          </a>
+        <a href="https://github.com/zzlinislatszy/Boston-Housing-Price-Prediction" target="_blank">
+          <rect x="3810" y="2780" width="180" height="180" class="debug-rect" />
+        </a>
 
-          <a href="https://drive.google.com/file/d/1CMyYPhNeoFStYpQo26wQwtt8sQxEVfO7/view?usp=sharing" target="_blank">
-            <rect x="5460" y="2780" width="220" height="180" class="debug-rect" fill="transparent" />
-          </a>
-        </svg>
-      </div>
+        <a href="https://drive.google.com/file/d/1CMyYPhNeoFStYpQo26wQwtt8sQxEVfO7/view?usp=sharing" target="_blank">
+          <rect x="5460" y="2780" width="220" height="180" class="debug-rect" />
+        </a>
+      </svg>
     </div>
 
     <nav class="nav" aria-label="Primary">
@@ -98,7 +99,6 @@
       const svgP = pt.matrixTransform(svg.getScreenCTM().inverse());
       const coords = `x=${Math.round(svgP.x)}, y=${Math.round(svgP.y)}`;
       console.log(coords);
-      // 點擊後在頁面標題顯示座標，方便你在手機測試
       document.title = coords;
     });
   </script>
