@@ -423,3 +423,19 @@ body{
   overflow: hidden;
 }
 
+/* Projects logo hotspots */
+.page-pj .pj-hotspot{
+  position: absolute;
+  z-index: 5;           /* 在背景上、但不一定要蓋過 nav */
+  display: block;
+  background: transparent;
+  cursor: pointer;
+}
+
+debug only */
+/*
+.page-pj .pj-hotspot{
+  background: rgba(255,0,0,.18);
+  outline: 2px solid rgba(255,0,0,.55);
+}
+
