@@ -436,123 +436,67 @@ body{
    Projects (PJ)
    ========================= */
 
-/* PJ page hero */
+/* PJ page hero：外層只當黑色舞台容器 */
 .hero--pj{
-  background-image: url("./assets/hero_pj.jpg");
+  background-image: none; /* ✅ 不再用 cover 當背景，避免裁切造成跑位 */
 }
 
-/* PJ layout vars：用 vw/vh 百分比取代固定 px */
-.page-pj{
-  --pj-color: var(--abt-color);
-
-  /* 內文規格：字體大小保持 px（確保可讀性） */
-  --pj-zh-size: var(--abt-size);        /* 11px */
-  --pj-zh-track: var(--abt-tracking);   /* 0.045em */
-  --pj-zh-leading: var(--abt-leading);  /* 2 */
-
-  --pj-hd-size: 15px;
-  --pj-hd-track: 0.06em;
-
-  /* ✅ 內文容器定位：改用視窗百分比 */
-  --pj-top: 23vh;      /* 200px ÷ 1920 ≈ 10.5% 視窗高度 */
-  --pj-left: 18vw;     /* 220px ÷ 1920 ≈ 11.5% 視窗寬度 */
-  --pj-width: 80vw;    /* 1140px ÷ 1920 ≈ 59.4% 視窗寬度 */
-
-  --pj-col-gap: 8vw;  /* 120px ÷ 1920 ≈ 6.25% 視窗寬度 */
-}
-
-/* Projects 內文容器 */
-.page-pj .pj{
+/* ✅ 以固定比例舞台承載 hero_pj，確保任何螢幕都「不裁切」 */
+.page-pj .pj-stage{
   position: absolute;
-  top: var(--pj-top);
-  left: var(--pj-left);
-  width: var(--pj-width);
+  inset: 0;
+  margin: auto;
+  z-index: 1;
+
+  /* 你的設計稿若是 1920x1080 就用 16/9；
+     若 hero_pj 不是 16:9，只要改這個比例即可 */
+  aspect-ratio: 16 / 9;
+
+  /* 舞台尺寸：以視窗為上限，永遠完整顯示 */
+  width: min(100vw, calc(100vh * (16 / 9)));
+  height: min(100vh, calc(100vw * (9 / 16)));
+
+  background-image: url("./assets/hero_pj.jpg");
+  background-size: contain;      /* ✅ 關鍵：不裁切 */
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* ✅ Logo 透明點擊熱區（真正上線請保持透明） */
+.page-pj .pj-hotspot{
+  position: absolute;
   z-index: 2;
-  color: var(--pj-color);
+
+  /* 你原本用 vw 當尺寸會跟螢幕縮放一起飄，這裡改成依舞台比例縮放 */
+  width: 26px;
+  height: 26px;
+
+  background: transparent;
+  outline: none;
+  text-decoration: none;
 }
 
-/* 三欄 */
-.pj-grid{
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  column-gap: var(--pj-col-gap);
-  align-items: start;
-}
-
-/* 欄位標題 */
-.pj-hd{
-  font-size: var(--pj-hd-size);
-  letter-spacing: var(--pj-hd-track);
-  margin: 0 0 18px;
-  text-transform: uppercase;
-}
-
-/* 中文內文 */
-.pj-zh{
-  font-family: "GenRyuMin TW", serif;
-  font-size: var(--pj-zh-size);
-  letter-spacing: var(--pj-zh-track);
-  line-height: var(--pj-zh-leading);
-  margin: 0 0 14px;
-  padding: 0;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-.pj-col{
-  padding: 0;
-}
-
-/* 內文段落間距 */
-.pj-gap{ 
-  margin-top: 18px; 
-}
-
-/* 列表 */
-.pj-ol, .pj-ul, .pj-bul{
-  margin: 8px 0 0 18px;
-  padding: 0;
-}
-
-.pj-ol li, .pj-ul li, .pj-bul li{
-  margin: 0 0 8px;
-}
-
-/* ✅ 透明點擊熱區：改用視窗百分比 */
-.pj-hotspot{
-  position: fixed;
-  z-index: 9999;
-  width: 1.8vw;   /* 26px ÷ 1920 ≈ 1.35vw */
-  height: 1.8vw;  /* 保持正方形 */
-  background: rgba(255, 0, 0, 0.2);
-  border: 2px solid red;
-}
-
-/* ✅ Logo 點擊位置：改用視窗百分比 */
+/* ✅ 熱區位置：改成「舞台內百分比」鎖死，不看螢幕比例 */
 .page-pj .pj-hotspot--etl{
-  left: 36.5vw;   /* 554px ÷ 1920 */
-  top: 80vh;     /* 686px ÷ 1080（假設你的設計稿是 1920x1080） */
+  left: 36.5%;
+  top: 80%;
 }
 
 .page-pj .pj-hotspot--boston{
-  left: 64vw;    /* 969px ÷ 1920 */
-  top: 80vh;
+  left: 64%;
+  top: 80%;
 }
 
 .page-pj .pj-hotspot--land{
-  left: 92vw;   /* 1393px ÷ 1920 */
-  top: 80vh;
+  left: 92%;
+  top: 80%;
 }
 
-/* ✅ 內文對齊微調：改用 vw */
-.page-pj .pj-grid > .pj-col:nth-child(1){
-  transform: translateX(-0.8vw) !important;  /* 25px ÷ 1920 */
+/* （除錯用）要看熱區時再打開 */
+/*
+.page-pj .pj-hotspot{
+  background: rgba(255, 0, 0, 0.2);
+  outline: 2px solid red;
 }
+*/
 
-.page-pj .pj-grid > .pj-col:nth-child(2){
-  transform: translateX(-0.2vw) !important; /* 30px ÷ 1920 */
-}
-
-.page-pj .pj-grid > .pj-col:nth-child(3){
-  transform: translateX(0.1vw) !important; /* 10px ÷ 1920 */
-}
