@@ -102,8 +102,7 @@
       pt.y = e.clientY;
       const svgP = pt.matrixTransform(svg.getScreenCTM().inverse());
       console.log(`x=${Math.round(svgP.x)}, y=${Math.round(svgP.y)}`);
-      document.title = `x=${Math.round(svgP.x)}, y=${Math.round(svgP.y)}`;
-    });
+
   </script>
 </body>
 </html>
